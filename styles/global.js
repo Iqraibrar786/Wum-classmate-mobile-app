@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   primaryContainer: {
     backgroundColor: "#fff",
-    marginBottom: 210,
+    marginBottom: 200,
     marginTop: 80,
     margin: 12,
     // padding: 20,

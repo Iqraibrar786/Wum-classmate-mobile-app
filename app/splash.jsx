@@ -6,9 +6,15 @@ import {
 } from "react-native";
 import styles from "../styles/global";
 import { useFonts } from 'expo-font';
+import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Img = require("../assets/class5img.jpg");
+
 const Splash=()=>{
+  const router = useRouter();
+  setTimeout(()=>{
+    router.navigate("onboarding1");
+  },3000);
   const [fontsLoaded] = useFonts({
     'Poppins-ExtraBold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
     'Poppins-Medium': require('../assets/fonts/Poppins-Medium.ttf'),
