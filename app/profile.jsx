@@ -1,22 +1,27 @@
 import React from "react";
 import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../styles/global";
+import { useRouter } from "expo-router";
 export default function ProfileScreen() {
+  const router=useRouter();
+  
+    function editprofile(){
+      router.push("/editprofile");
+    }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
         {/* Navbar */}
         <View style={styles.navContainer}>
           <TouchableOpacity>
-            <AntDesign name="arrowleft" size={24} color="black" />
+            <AntDesign name="arrowleft" size={24} color="black" marginTop={20}/>
           </TouchableOpacity>
           <Text style={styles.title}>My Profile</Text>
           <TouchableOpacity>
-            <AntDesign name="setting" size={24} color="black" />
+            <AntDesign name="setting" size={24} color="black" marginTop={20}/>
           </TouchableOpacity>
         </View>
 
@@ -24,7 +29,8 @@ export default function ProfileScreen() {
         <View style={styles.userprofileContainer}>
           <Text style={styles.name}>Iqra Ibrar</Text>
           <Text style={styles.username}>shes5748@gmail.com</Text>
-          <TouchableOpacity style={styles.editProfileButton}>
+          <TouchableOpacity style={styles.editProfileButton}
+          onPress={editprofile}>
             <Text style={styles.editProfileText}>Edit Profile</Text>
           </TouchableOpacity>
         </View>
@@ -36,7 +42,7 @@ export default function ProfileScreen() {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.profileList}>
-            <Feather name="download" size={24} color="black" />
+            <AntDesign name="download" size={24} color="black" />
             <Text style={styles.profileIconText}>Download</Text>
           </TouchableOpacity>
 

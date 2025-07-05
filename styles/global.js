@@ -6,21 +6,20 @@ const PrimaryBorderRadius = 12;
 const SecondaryBorderRadius = 100;
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     margin: 10,
-    marginTop: 60,
+    marginTop: 100,
     padding: 10,
-    marginBottom: 80,
+    marginBottom: 50,
     alignItems: "center",
     justifyContent: "center",
   },
   primaryContainer: {
     backgroundColor: "#fff",
-    marginBottom: 200,
-    marginTop: 80,
+    marginBottom: 150,
+    marginTop: -1,
     margin: 12,
-    // padding: 20,
   },
   secondaryContainer: {
     alignItems: "center",
@@ -40,9 +39,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   secondImg: {
-    height: 190,
-    width: 200,
+    height: 150,
+    width: 150,
     marginBottom: -40,
+    marginTop: 25,
     marginHorizontal: 20,
     alignSelf: "center",
     justifyContent: "center",
@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     height: 55,
     borderRadius: PrimaryBorderRadius,
     alignSelf: "center",
-    marginTop: 18,
-    marginBottom: 10,
+    marginTop: 21,
+    marginBottom: 15,
   },
   buttonText: {
     fontSize: 15,
@@ -173,18 +173,24 @@ const styles = StyleSheet.create({
 
   inputContainer: {
     marginTop: 20,
+    width: 330,
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "center",
+    // backgroundColor: "#f5f5f5",
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    margin: 10,
   },
   input: {
     borderWidth: 1,
     width: 325,
     height: 58,
+    alignSelf: "center",
     flexDirection: "row",
     borderColor: "#ccc",
-    color: "#808080",
     borderWidth: 1,
     borderRadius: PrimaryBorderRadius,
-    alignSelf: "center",
-    justifyContent: "center",
     paddingHorizontal: 10,
     marginBottom: 5,
     marginTop: 5,
@@ -247,7 +253,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   sideTitle: {
-    marginLeft: -10,
+    marginLeft: -40,
     marginBottom: 35,
     margin: 10,
     padding: 22,
@@ -259,7 +265,7 @@ const styles = StyleSheet.create({
   sideDescription: {
     width: 250,
     height: 60,
-    marginLeft: 11,
+    marginLeft: -60,
     marginTop: -40,
     fontSize: 14,
     color: PrimaryColor,
@@ -444,8 +450,8 @@ const styles = StyleSheet.create({
     color: "#444",
   },
   header: {
-    height: 150,
-    width: 342,
+    height: 180,
+    width: 350,
     backgroundColor: SecondaryColor,
     justifyContent: "flex-end",
     alignSelf: "center",
@@ -487,7 +493,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   navContainer: {
-    height: 56,
+    height: 70,
     width: 360,
     backgroundColor: "#fff",
     elevation: 4,
@@ -500,9 +506,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+    marginTop: 13,
     color: "#dea019",
     fontWeight: "500",
-    flex: 1,
+    // flex: 1,
     textAlign: "center",
     marginRight: 28,
   },
@@ -564,7 +571,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontStyle: "Poppins-Regular",
   },
-   announcementBotton: {
+  announcementBotton: {
     height: 50,
     width: "58%",
     marginLeft: -1,
@@ -743,6 +750,7 @@ const styles = StyleSheet.create({
   postBtn: {
     height: 42,
     width: 80,
+    marginTop: 25,
     marginLeft: 130,
     borderRadius: 100,
     backgroundColor: SecondaryColor,
@@ -754,65 +762,57 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontWeight: "bold",
   },
-   chipsRow: {
-    flexDirection: 'row',
+  chipsRow: {
+    flexDirection: "row",
     gap: 12,
   },
   chip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#01579b',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#01579b",
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 20,
     marginRight: 8,
   },
   chipText: {
-    color: 'white',
+    color: "white",
     marginLeft: 6,
   },
-   optionRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  optionRow: {
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 12,
     marginLeft: 8,
   },
   optionText: {
-    color: '#888',
+    color: "#888",
     marginLeft: 10,
     fontSize: 16,
   },
 
-
-
-
-
-
-
-
-
- attachmentCard: {
+  attachmentCard: {
     width: 170,
     height: 100,
     padding: 8,
-    backgroundColor: '#1e1e1e',
+    backgroundColor: "#1e1e1e",
     borderRadius: 12,
     padding: 8,
     alignSelf: "center",
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   caption: {
     flexDirection: "row",
-    color: 'black',
+    color: "black",
     marginLeft: -180,
     marginTop: 150,
     fontStyle: "Poppins-Regular",
   },
-  attachmentContainer:{
+  attachmentContainer: {
     flexDirection: "row",
     gap: 6,
     marginLeft: -7,
-  }
+  },
 });
 export default styles;

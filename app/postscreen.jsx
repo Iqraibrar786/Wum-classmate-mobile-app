@@ -12,7 +12,12 @@ import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from "../styles/global";
+import { useRouter } from "expo-router";
 const MaterialUploadScreen = () => {
+    const router=useRouter();
+                         function attachments(){
+                           router.push("/attachments");
+                         }
   const [Classcode, setClasscode] = useState("");
   return (
     <SafeAreaView style={styles.container}>
@@ -20,7 +25,7 @@ const MaterialUploadScreen = () => {
         {/* Navbar */}
         <View style={styles.navContainer}>
           <TouchableOpacity>
-            <Entypo name="cross" size={28} color="black" />
+            <Entypo name="cross" size={28} color="black" marginTop={33} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.postBtn}>
@@ -28,7 +33,7 @@ const MaterialUploadScreen = () => {
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" />
+            <Icon name="more-vert" size={24} color="#000" marginTop={33}/>
           </TouchableOpacity>
         </View>
         <Text style={styles.name}>Material tital (Required)</Text>
@@ -74,7 +79,8 @@ const MaterialUploadScreen = () => {
             keyboardType="Class-code"
           />
         </View>
-        <TouchableOpacity style={styles.optionRow}>
+        <TouchableOpacity style={styles.optionRow}
+        onPress={attachments}>
         <MaterialIcons name="attach-file" size={20} color="#01579b" />
         <Text style={styles.optionText}>Add attachment</Text>
       </TouchableOpacity>

@@ -1,7 +1,7 @@
 import React from "react-native";
 // import { useState } from "react";
 import { ScrollView } from "react-native";
-import { useRouter } from 'expo-router';
+import { useRouter } from "expo-router";
 
 import Splash from "./splash";
 import Onboarding1 from "./onboarding1";
@@ -36,11 +36,11 @@ import Attachments from "./attachments ";
       <Otp/>
       <Home/>
       <CreateClass/>
+      <Cardscreen/>
       <JoinClass/>
       <ClassInfo/>
       <Assigning/>
       <Addperson/>
-      <Cardscreen/>
       <Announcement/>
       <Postscreen/>
       <Attachments/>

@@ -8,7 +8,7 @@ import styles from "../styles/global";
 import { useFonts } from 'expo-font';
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-const Img = require("../assets/class5img.jpg");
+const Img = require("../assets/images/class5img.jpg");
 
 const Splash=()=>{
   const router = useRouter();
@@ -29,7 +29,6 @@ const Splash=()=>{
           <Image source={Img} style={styles.image} />
           <Text style={styles.mainTitle}><Text style={styles.Elearning}>E-Learning</Text>
           </Text>
-          
         </View>
       </SafeAreaView>
   );

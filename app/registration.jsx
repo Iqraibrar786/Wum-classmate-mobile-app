@@ -9,12 +9,16 @@ import {
 } from "react-native";
 import styles from "../styles/global";
 import { useState } from "react";
+import { useRouter } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
 function Registration() {
+   const router=useRouter();
+        function otp(){
+          router.push("/otp");
+        }
   const [PhoneNumber, setPhoneNumber] = useState("");
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
+    <SafeAreaView style={styles.Container}>
         <Text style={styles.sideTitle}>Phone Registration</Text>
         <Text style={styles.sideDescription}>
           Please enter your valid phone number.We well send you 4-digit code to
@@ -30,7 +34,8 @@ function Registration() {
             />
           </View>
         </View>
-        <TouchableOpacity style={styles.primaryButton}>
+        <TouchableOpacity style={styles.primaryButton}
+        onPress={otp}>
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
         <Text style={styles.subTitle}>
@@ -39,7 +44,6 @@ function Registration() {
         <TouchableOpacity>
           <Text style={styles.link}>Terms and conditions</Text>
         </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 }

@@ -15,11 +15,11 @@ const announcement = () => {
         {/* Navbar */}
         <View style={styles.navContainer}>
           <TouchableOpacity>
-            <Icon name="menu" size={28} color="#000" />
+            <Icon name="menu" size={28} color="#000" marginTop={20}/>
           </TouchableOpacity>
           <Text style={styles.title}>IT 6th sem</Text>
           <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" />
+            <Icon name="more-vert" size={24} color="#000" marginTop={20}/>
           </TouchableOpacity>
         </View>
 

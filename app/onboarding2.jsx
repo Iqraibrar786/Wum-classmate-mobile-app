@@ -7,11 +7,19 @@ import {
 } from "react-native";
 import styles from "../styles/global";
 import { useFonts } from 'expo-font';
+import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-const Img = require("../assets/class2img.jpg");
+const Img = require("../assets/images/class2img.jpg");
 
 const Onboarding2=()=> {
+   const router=useRouter();
+    function gotosignup(){
+      router.push("/signup");
+    }
+    
+    function gotologin(){
+      router.push("/login");
+    }
   const [fontsLoaded] = useFonts({
     'Poppins-ExtraBold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
     'Poppins-Medium': require('../assets/fonts/Poppins-Medium.ttf'),
@@ -22,9 +30,7 @@ const Onboarding2=()=> {
   }
   return (
 
-      <SafeAreaView style={styles.container}>
-        <View style={styles.primaryContainer}>
-          
+      <SafeAreaView style={styles.Container}>
           <Image source={Img} style={styles.image} />
           <Text style={styles.Elearning}> E-Learning</Text>
           <Text style={styles.mainTitle}>Your great future</Text>
@@ -35,16 +41,15 @@ const Onboarding2=()=> {
           
          {/* Login SignUp Button */}
           <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.secondaryButton}>
+          <TouchableOpacity style={styles.secondaryButton}
+           onPress={gotosignup}>
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.secondaryButton,{backgroundColor:"#FFFFFF"},]}>
+          <TouchableOpacity style={[styles.secondaryButton,{backgroundColor:"#FFFFFF"},]}
+            onPress={gotologin}>
             <Text style={styles.signUpButtonText}>Sign-up</Text>
           </TouchableOpacity>
           </View>
-
-
-        </View>
       </SafeAreaView>
   );
 }

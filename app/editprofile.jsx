@@ -3,19 +3,25 @@ import { View, Text, TouchableOpacity, SafeAreaView, TextInput } from "react-nat
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../styles/global";
+import { useRouter } from "expo-router";
 const EdirProfileScreen=()=> {
+  const router=useRouter();
+  function profile(){
+      router.push("/profile");
+    }
   const [showPassword, setShowPassword] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
         {/* Navbar */}
         <View style={styles.navContainer}>
-          <TouchableOpacity>
-            <AntDesign name="arrowleft" size={24} color="black" />
+          <TouchableOpacity
+          onPress={profile}>
+            <AntDesign name="arrowleft" size={24} color="black" marginTop={25} />
           </TouchableOpacity>
           <Text style={styles.title}>Edit Profile</Text>
           <TouchableOpacity>
-           <AntDesign name="check" size={24} color="black" />
+           <AntDesign name="check" size={24} color="black"  marginTop={25} />
           </TouchableOpacity>
         </View>
 

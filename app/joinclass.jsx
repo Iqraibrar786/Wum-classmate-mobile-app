@@ -1,10 +1,18 @@
 import React,{useState} from 'react';
 import { View, Text,TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useRouter } from "expo-router";
 import styles from "../styles/global";
 import Entypo from "@expo/vector-icons/Entypo";
 const JoinClass = () => {
+   const router=useRouter();
+                       function home(){
+                         router.push("/home");
+                       }
+                       const routerB=useRouter();
+                       function classinfo(){
+                         router.push("/classinfo");
+                       }
    const [Classcode, setClasscode] = useState("");
   return (
      <SafeAreaView style={styles.container}>
@@ -12,11 +20,15 @@ const JoinClass = () => {
         
 
      <View style={styles.navbarIcon}>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={home}>
           <Entypo name="cross" size={28} color="black" />
         </TouchableOpacity>
           <Text style={styles.navbarIconText}>Join class</Text>
+          <TouchableOpacity
+          onPress={classinfo}>
           <Text style={styles.disabledText}>Join</Text>
+          </TouchableOpacity>
       </View>
 
 

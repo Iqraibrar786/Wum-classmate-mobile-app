@@ -9,13 +9,19 @@ import {
 } from "react-native";
 import styles from "../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
-const Img = require("../assets/class1img.jpg");
 
 export default function InviteScreen() {
-  const [text, setText] = useState("");
-  const handleAddUser = () => {
-    // Handle the add user action here
-    console.log("Add user:", text);
+  const [teacherText, setTeacherText] = useState("");
+  const [studentText, setStudentText] = useState("");
+
+  const handleAddTeacher = () => {
+    console.log("Add teacher:", teacherText);
+    setTeacherText(""); // Clear input after adding
+  };
+
+  const handleAddStudent = () => {
+    console.log("Add student:", studentText);
+    setStudentText(""); // Clear input after adding
   };
 
   return (
@@ -24,11 +30,11 @@ export default function InviteScreen() {
         <View style={styles.navContainer}>
           {/* Navbar */}
           <TouchableOpacity>
-            <Icon name="menu" size={28} color="#000" />
+            <Icon name="menu" size={28} color="#000" style={{ marginTop: 13 }} />
           </TouchableOpacity>
           <Text style={styles.title}>IT 6th sem</Text>
           <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" />
+            <Icon name="more-vert" size={24} color="#000" style={{ marginTop: 13 }} />
           </TouchableOpacity>
         </View>
 
@@ -36,20 +42,20 @@ export default function InviteScreen() {
         <View style={styles.userbtnContainer}>
           <TextInput
             style={styles.textInputBtn}
-            onChangeText={setText}
-            value={text}
+            onChangeText={setTeacherText}
+            value={teacherText}
             placeholder="Teacher"
             placeholderTextColor="#999"
           />
           <TouchableOpacity
-            onPress={handleAddUser}
+            onPress={handleAddTeacher}
             style={styles.button}
-            disabled={!text.trim()} // Disable if input is empty
+            disabled={!teacherText.trim()}
           >
             <Icon
               name="person-add"
               size={24}
-              color={text.trim() ? "#dea019" : "#ccc"}
+              color={teacherText.trim() ? "#dea019" : "#ccc"}
             />
           </TouchableOpacity>
         </View>
@@ -58,26 +64,26 @@ export default function InviteScreen() {
         <View style={styles.userbtnContainer}>
           <TextInput
             style={styles.textInputBtn}
-            onChangeText={setText}
-            value={text}
+            onChangeText={setStudentText}
+            value={studentText}
             placeholder="Student"
             placeholderTextColor="#999"
           />
           <TouchableOpacity
-            onPress={handleAddUser}
+            onPress={handleAddStudent}
             style={styles.button}
-            disabled={!text.trim()} // Disable if input is empty
+            disabled={!studentText.trim()}
           >
             <Icon
               name="person-add"
               size={24}
-              color={text.trim() ? "#dea019" : "#ccc"}
+              color={studentText.trim() ? "#dea019" : "#ccc"}
             />
           </TouchableOpacity>
         </View>
+        
         {/* Image */}
-
-        <Image source={Img} style={styles.image} />
+        <Image source={require("../assets/images/class1img.jpg")} style={styles.image} />
 
         {/* Invite Text */}
         <Text style={styles.subTitle}>Invite students to your class</Text>

@@ -4,20 +4,25 @@ import styles from "../styles/global";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
-const Img = require("../assets/img5.jpg");
+import { useRouter } from "expo-router";
+const Img = require("../assets/images/img5.jpg");
 
 const AssigningScreen = () => {
+  const router=useRouter();
+    
+      function postscreen(){
+        router.push("/postscreen");
+      }
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
+    <SafeAreaView style={styles.primaryContainer}>
         <View style={styles.navContainer}>
           {/* Navbar */}
           <TouchableOpacity>
-            <Icon name="menu" size={28} color="#000" />
+            <Icon name="menu" size={28} color="#000" marginTop={23} />
           </TouchableOpacity>
           <Text style={styles.title}>IT 6th sem</Text>
           <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" />
+            <Icon name="more-vert" size={24} color="#000" marginTop={23}/>
           </TouchableOpacity>
         </View>
         {/* Image */}
@@ -25,7 +30,7 @@ const AssigningScreen = () => {
           <Image source={Img} style={styles.secondImg} />
         </View>
 
-        {/* Instructuins */}
+        {/* Instructions */}
         <Text
           style={{
             fontSize: 17,
@@ -50,10 +55,10 @@ const AssigningScreen = () => {
           into topics
         </Text>
 
-        <TouchableOpacity style={styles.addButton}>
+        <TouchableOpacity style={styles.addButton}
+        onPress={postscreen}>
           <MaterialIcons name="add" size={28} color="#dea019" />
         </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };

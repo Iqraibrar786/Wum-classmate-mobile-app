@@ -1,11 +1,21 @@
 import React from "react-native";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Text, Image, TouchableOpacity } from "react-native";
 import styles from "../styles/global";
 import { useFonts } from "expo-font";
+import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-const Img = require("../assets/class5img.jpg");
+const Img = require("../assets/images/class5img.jpg");
 
 const Onboarding1 = () => {
+  const router=useRouter();
+
+  function gotoonboarding2(){
+    router.push("/onboarding2");
+  }
+  function gotosplash(){
+    router.push("/splash")
+  }
+  
   const [fontsLoaded] = useFonts({
     "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
     "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
@@ -15,10 +25,7 @@ const Onboarding1 = () => {
     return null;
   }
   return (
-
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
-
+    <SafeAreaView style={styles.Container}>
         {/* Image */}
         <Image source={Img} style={styles.image} />
         <Text style={styles.mainTitle}>
@@ -30,13 +37,14 @@ const Onboarding1 = () => {
         </Text>
            
         {/* Buttons */}
-        <TouchableOpacity style={styles.primaryButton}>
+        <TouchableOpacity style={styles.primaryButton}
+          onPress={gotoonboarding2}>
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.transparentButton}>
+        <TouchableOpacity style={styles.transparentButton}
+         onPress={gotosplash}>
           <Text style={styles.transparentButtonText}>skip</Text>
         </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };

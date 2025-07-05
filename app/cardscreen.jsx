@@ -4,7 +4,12 @@ import { LinearGradient } from "expo-linear-gradient"
 import styles from "../styles/global";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 const BackendCard = () => {
+   const router=useRouter();
+                         function announcement(){
+                           router.push("/announcement");
+                         }
   return (
     // First card
     <SafeAreaView style={styles.container}>
@@ -23,6 +28,8 @@ const BackendCard = () => {
         </View>
 
     {/* first card */}
+    <TouchableOpacity
+    onPress={announcement}>
     <LinearGradient
       colors={['#f7c13e',"#2A2575"]}
       start={{ x: 0, y: 0 }}
@@ -40,9 +47,11 @@ const BackendCard = () => {
         </TouchableOpacity>
       </View>
     </LinearGradient>
+    </TouchableOpacity>
 
 
     {/* Second card */}
+    <TouchableOpacity>
     <LinearGradient
       colors={[ '#00F3FF',"#E0B69E"]}
       start={{ x: 1, y: 0 }}
@@ -60,9 +69,11 @@ const BackendCard = () => {
         </TouchableOpacity>
       </View>
     </LinearGradient>
+    </TouchableOpacity>
 
 
       {/* Third card */}
+      <TouchableOpacity>
     <LinearGradient
       colors={["#2A2575", '#00FFBC']}
       start={{ x: 0, y: 0 }}
@@ -80,8 +91,10 @@ const BackendCard = () => {
         </TouchableOpacity>
       </View>
     </LinearGradient>
+    </TouchableOpacity>
 
     {/* Forth card */}
+    <TouchableOpacity>
     <LinearGradient
       colors={["#cd6155", '#839192']}
       start={{ x: 0, y: 0 }}
@@ -99,8 +112,10 @@ const BackendCard = () => {
         </TouchableOpacity>
       </View>
     </LinearGradient>
+    </TouchableOpacity>
 
       {/* Fifth card */}
+       <TouchableOpacity>
      <LinearGradient
       colors={['rgb(147, 147, 215)', '#00FFBC']}
       start={{ x: 0, y: 0 }}
@@ -118,6 +133,7 @@ const BackendCard = () => {
         </TouchableOpacity>
       </View>
     </LinearGradient>
+    </TouchableOpacity>
     
       {/* Add button */}
      <TouchableOpacity style={styles.addButton}>

@@ -2,33 +2,42 @@ import React from "react";
 import {View, Text, TouchableOpacity, TextInput,Image} from "react-native";
 import styles from "../styles/global";
 import { useFonts } from "expo-font";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
+import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-// const MyImg = require("../assets/icon2.png");
-// const firstImg = require("../assets/icon1.png");
-// const secondImg = require("../assets/icon3.png");
-
 const SignUp = () => {
+     const router=useRouter();
+      function gotologin(){
+        router.push("/login");
+      }
+      function gotohome(){
+        router.push("/home");
+      }
    const [name, setName] = useState("");
    const [password, setPassword] = useState("");
    const [email, setEmail] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
    
    const [fontsLoaded] = useFonts({
        "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
        "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
        "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
      });
+
+      const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
      
      if (!fontsLoaded) {
        return null;
      }
 
   return (
-    <SafeAreaView sytle={styles.container}>
-    <View style={styles.primaryContainer}>
+    <SafeAreaView sytle={styles.Container}>
       <Text style={styles.mainTitle}>Create account</Text>
       
       <View style={styles.inputContainer}>
@@ -38,6 +47,10 @@ const SignUp = () => {
         value={name}
         onChangeText={setName}
       />
+      </View>
+
+      {/* Email TetxInput */}
+       <View style={styles.inputContainer}>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -46,14 +59,29 @@ const SignUp = () => {
         keyboardType="email-address"
         autoCapitalize="none"
       />
+      </View>
+       
+       {/* user password */}
+       <View style={styles.inputContainer}>
       <TextInput
         style={styles.input}
         placeholder="User password"
         value={password}
+         placeholderTextColor="#888"
         onChangeText={setPassword}
-        secureTextEntry={true}
+                 secureTextEntry={!showPassword}
+          autoCapitalize="none"
       /> 
-      </View>
+       <TouchableOpacity onPress={toggleShowPassword}>
+          <Ionicons
+            name={showPassword ? 'eye' : 'eye-off'}
+            size={22}
+            marginLeft={-38}
+            color="#888"
+          />
+        </TouchableOpacity>
+        </View>
+      
        <View style={styles.dividerContainer}>
         <View style={styles.dividerLine} />
         <Text style={styles.dividerText}>SignUp with</Text>
@@ -73,17 +101,18 @@ const SignUp = () => {
         </TouchableOpacity>
       </View>
       
-      <TouchableOpacity style={styles.primaryButton}>
+      <TouchableOpacity style={styles.primaryButton}
+      onPress={gotohome}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
       
       <View style={styles.resendContainer}>
         <Text style={styles.signUpText}>Already have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={gotologin}>
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
-    </View> 
     </SafeAreaView>           
   );
 }

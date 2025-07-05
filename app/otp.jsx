@@ -2,9 +2,13 @@ import React, { useRef, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import styles from "../styles/global";
 import { StatusBar } from "expo-status-bar";
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { useRouter } from "expo-router";
 
 const Otp = () => {
+          const router=useRouter();
+                 function home(){
+                   router.push("/home");
+                 }
   const numberOfInputs = 4;                                        //<----Define how many OTP digits the user must inputs
   const [otp, setOtp] = useState(Array(numberOfInputs).fill('')); //<----Initialize array of 4 empty strings each OTP digit is separately
   const inputsRef = useRef([]);                                  //<---- Use REF array keep track each input field DOM reference
@@ -33,8 +37,7 @@ const Otp = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-    <View style={styles.primaryContainer}>
+    <SafeAreaView style={styles.Container}>
       <StatusBar barStyle="dark-content" />
       <Text style={styles.sideTitle}>OTP Verification!{<>    </>}</Text>
 
@@ -78,10 +81,10 @@ const Otp = () => {
         </TouchableOpacity>
         </View>
 
-      <TouchableOpacity style={styles.primaryButton} onPress={handleContinue}>
+      <TouchableOpacity style={styles.primaryButton}
+      onPress={home}>
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
-    </View>
     </SafeAreaView>
   );
 };
