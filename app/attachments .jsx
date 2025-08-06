@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Entypo from "@expo/vector-icons/Entypo";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import styles from "../styles/global";
@@ -21,20 +21,7 @@ const MaterialUploadScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
-        {/* Navbar */}
-        <View style={styles.navContainer}>
-          <TouchableOpacity>
-            <AntDesign name="arrowleft" size={24} color="black" />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Entypo name="share" size={24} color="black" marginLeft={180} />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" />
-          </TouchableOpacity>
-        </View>
+       
         <Text style={styles.name}>Lec-1 DEMO Class room</Text>
 
         {/* Divider */}

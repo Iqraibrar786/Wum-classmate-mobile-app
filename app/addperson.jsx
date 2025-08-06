@@ -27,16 +27,6 @@ export default function InviteScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
-        <View style={styles.navContainer}>
-          {/* Navbar */}
-          <TouchableOpacity>
-            <Icon name="menu" size={28} color="#000" style={{ marginTop: 13 }} />
-          </TouchableOpacity>
-          <Text style={styles.title}>IT 6th sem</Text>
-          <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" style={{ marginTop: 13 }} />
-          </TouchableOpacity>
-        </View>
 
         {/* Teachers Section */}
         <View style={styles.userbtnContainer}>

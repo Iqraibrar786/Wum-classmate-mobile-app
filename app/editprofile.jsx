@@ -11,25 +11,17 @@ const EdirProfileScreen=()=> {
     }
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
-        {/* Navbar */}
-        <View style={styles.navContainer}>
-          <TouchableOpacity
-          onPress={profile}>
-            <AntDesign name="arrowleft" size={24} color="black" marginTop={25} />
-          </TouchableOpacity>
-          <Text style={styles.title}>Edit Profile</Text>
-          <TouchableOpacity>
-           <AntDesign name="check" size={24} color="black"  marginTop={25} />
-          </TouchableOpacity>
-        </View>
+    <SafeAreaView style={styles.Container}>
+      <View>
 
 
       <Text style={styles.profileLabel}>Name</Text>
       <TextInput style={styles.profileInput} />
 
       <Text style={styles.profileLabel}>E mail address</Text>
+      <TextInput style={styles.profileInput} />
+
+      <Text style={styles.profileLabel}>Description</Text>
       <TextInput style={styles.profileInput} />
 
      

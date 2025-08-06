@@ -1,22 +1,23 @@
 import { StyleSheet } from "react-native";
 
 const PrimaryColor = "#2A2575";
-const SecondaryColor = "'rgb(147, 147, 215)'";
+const SecondPrimaryColor = "rgba(255, 255, 255, 1)";
+const SecondaryColor = "rgb(147, 147, 215)";
 const PrimaryBorderRadius = 12;
 const SecondaryBorderRadius = 100;
 
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
-    marginTop: 100,
-    padding: 10,
+    marginTop: -10,
+    backgroundColor: SecondPrimaryColor,
+    padding: 20,
     marginBottom: 50,
     alignItems: "center",
     justifyContent: "center",
   },
   primaryContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: SecondPrimaryColor,
     marginBottom: 150,
     marginTop: -1,
     margin: 12,
@@ -24,10 +25,10 @@ const styles = StyleSheet.create({
   secondaryContainer: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
-    marginTop: 220,
-    marginBottom: 170,
-    margin: 12,
+    backgroundColor: SecondPrimaryColor,
+    marginTop: 100,
+    marginBottom: 150,
+    // margin: 12,
     padding: 10,
   },
   image: {
@@ -41,9 +42,9 @@ const styles = StyleSheet.create({
   secondImg: {
     height: 150,
     width: 150,
-    marginBottom: -40,
+    marginBottom: -30,
     marginTop: 25,
-    marginHorizontal: 20,
+    // marginHorizontal: 20,
     alignSelf: "center",
     justifyContent: "center",
   },
@@ -63,7 +64,6 @@ const styles = StyleSheet.create({
     width: 250,
     margin: 10,
     padding: -10,
-    // marginVertical: 20,
     marginTop: 10,
     marginBottom: 10,
     alignSelf: "center",
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#dea019",
     fontFamily: "Poppins-Regular",
-    marginTop: 20,
+    marginTop: 17,
     marginBottom: 20,
   },
   primaryButton: {
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     color: SecondaryColor,
   },
   transparentButton: {
-    backgroundColor: "#fff",
+    backgroundColor: SecondPrimaryColor,
     width: 250,
     height: 40,
     alignItems: "center",
@@ -167,19 +167,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   joinText: {
-    color: "#fff",
+    color: SecondPrimaryColor,
     fontSize: 16,
   },
-
   inputContainer: {
-    marginTop: 20,
+    marginTop: 10,
     width: 330,
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "center",
-    // backgroundColor: "#f5f5f5",
     borderRadius: 8,
-    paddingHorizontal: 10,
+    // paddingHorizontal: 10,
     margin: 10,
   },
   input: {
@@ -192,8 +190,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: PrimaryBorderRadius,
     paddingHorizontal: 10,
-    marginBottom: 5,
-    marginTop: 5,
+    // marginBottom: 5,
+    // marginTop: 5,
   },
   signUpLink: {
     color: SecondaryColor,
@@ -224,15 +222,12 @@ const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: 20,
+    marginLeft: -75,
   },
   rememberText: {
-    marginLeft: 4,
+    marginLeft: 8,
     color: "#888",
   },
-  //  forgotText: {
-  //   color: '#3D5CFF',
-  // },
   boxContainer: {
     flexDirection: "row",
     justifyContent: "space-evenly",
@@ -323,7 +318,7 @@ const styles = StyleSheet.create({
     top: 600,
     marginBottom: -40,
     // bottom: -70,
-    backgroundColor: "#fff",
+    backgroundColor: SecondPrimaryColor,
     borderRadius: 28,
     width: 56,
     height: 56,
@@ -390,7 +385,7 @@ const styles = StyleSheet.create({
   link: {
     height: 17,
     width: 138,
-    marginRight: 18,
+    // marginRight: 18,
     color: "rgb(28, 117, 234)",
     marginTop: 4,
     fontStyle: "Poppins-Regular",
@@ -402,7 +397,7 @@ const styles = StyleSheet.create({
   helpLink: {
     color: "#1a73e8",
     textDecorationLine: "underline",
-    marginLeft: 27,
+    marginLeft: 35,
   },
   dividerContainer: {
     flexDirection: "row",
@@ -464,7 +459,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     marginBottom: 60,
     marginLeft: 21,
-    color: "#fff",
+    color: SecondPrimaryColor,
   },
   descriptionText: {
     fontWeight: "500",
@@ -472,13 +467,13 @@ const styles = StyleSheet.create({
     marginTop: -59,
     marginBottom: 43,
     marginLeft: 21,
-    color: "#fff",
+    color: SecondPrimaryColor,
   },
   tabContainer: {
     flexDirection: "row",
     borderTopWidth: 1,
     borderTopColor: "#ddd",
-    backgroundColor: "#fff",
+    backgroundColor:SecondPrimaryColor,
     justifyContent: "space-around",
     paddingVertical: 10,
     marginTop: 50,
@@ -495,7 +490,7 @@ const styles = StyleSheet.create({
   navContainer: {
     height: 70,
     width: 360,
-    backgroundColor: "#fff",
+    backgroundColor:SecondPrimaryColor,
     elevation: 4,
     paddingHorizontal: 16,
     flexDirection: "row",
@@ -506,10 +501,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    marginTop: 13,
+    marginTop: 25,
     color: "#dea019",
     fontWeight: "500",
-    // flex: 1,
     textAlign: "center",
     marginRight: 28,
   },
@@ -546,7 +540,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   cardTitle: {
-    color: "#fff",
+    color: SecondPrimaryColor,
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -556,7 +550,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   students: {
-    color: "#fff",
+    color: SecondPrimaryColor,
     fontSize: 13,
     marginTop: 10,
   },
@@ -576,7 +570,7 @@ const styles = StyleSheet.create({
     width: "58%",
     marginLeft: -1,
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor:SecondPrimaryColor,
     borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
@@ -587,7 +581,7 @@ const styles = StyleSheet.create({
     width: "38%",
     marginLeft: -7,
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor: SecondPrimaryColor,
     borderRadius: 20,
     borderWidth: 1,
     paddingHorizontal: 10,
@@ -612,14 +606,14 @@ const styles = StyleSheet.create({
   },
   topSection: {},
   lecCardTitle: {
-    color: "#fff",
+    color:SecondPrimaryColor,
     fontSize: 14,
     fontWeight: "bold",
     marginTop: -25,
     marginLeft: 22,
   },
   lecCardDiscription: {
-    color: "#fff",
+    color:SecondPrimaryColor,
     fontSize: 15,
     fontWeight: "bold",
     marginLeft: 20,
@@ -654,7 +648,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   editProfileText: {
-    color: "#fff",
+    color: SecondPrimaryColor,
     fontWeight: "600",
   },
   changePasswordBtn: {
@@ -667,7 +661,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   changePasswordText: {
-    color: "#fff",
+    color: SecondPrimaryColor,
     fontWeight: "bold",
   },
   logoutBtn: {
@@ -748,17 +742,17 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   postBtn: {
-    height: 42,
+    height: 35,
     width: 80,
-    marginTop: 25,
+    marginTop: 30,
     marginLeft: 130,
     borderRadius: 100,
     backgroundColor: SecondaryColor,
   },
   postBtnText: {
     fontSize: 14,
-    marginTop: "10",
-    color: "#fff",
+    marginTop: "7",
+    color: SecondPrimaryColor,
     alignSelf: "center",
     fontWeight: "bold",
   },
@@ -813,6 +807,39 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 6,
     marginLeft: -7,
+  },
+   bottomSheetcontainer: {
+    flex: 1,
+    backgroundColor: 'grey',
+    marginBottom: 50,
+  },
+   bottomsheetList: {
+    flexDirection: "row",
+    padding: 10,
+    paddingVertical: 16,
+    borderBottomColor: "#eee",
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView: {
+    height: 250,
+    width:330,
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });
 export default styles;

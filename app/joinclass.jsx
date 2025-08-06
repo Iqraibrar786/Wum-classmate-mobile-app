@@ -17,19 +17,7 @@ const JoinClass = () => {
   return (
      <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
-        
 
-     <View style={styles.navbarIcon}>
-        <TouchableOpacity
-        onPress={home}>
-          <Entypo name="cross" size={28} color="black" />
-        </TouchableOpacity>
-          <Text style={styles.navbarIconText}>Join class</Text>
-          <TouchableOpacity
-          onPress={classinfo}>
-          <Text style={styles.disabledText}>Join</Text>
-          </TouchableOpacity>
-      </View>
 
 
          </View>

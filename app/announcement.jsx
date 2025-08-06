@@ -12,16 +12,6 @@ const announcement = () => {
     // First card
     <SafeAreaView style={styles.container}>
       <View style={styles.primaryContainer}>
-        {/* Navbar */}
-        <View style={styles.navContainer}>
-          <TouchableOpacity>
-            <Icon name="menu" size={28} color="#000" marginTop={20}/>
-          </TouchableOpacity>
-          <Text style={styles.title}>IT 6th sem</Text>
-          <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" marginTop={20}/>
-          </TouchableOpacity>
-        </View>
 
         {/* Card */}
         <LinearGradient
@@ -72,7 +62,6 @@ const announcement = () => {
             <Text style={styles.lecCardDiscription}> Room</Text>
             <Text style={styles.date}> 4 May</Text>
           </View>
-          
 
           <TextInput
            placeholder="Add class comment"

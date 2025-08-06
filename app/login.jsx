@@ -43,12 +43,8 @@ const Login = () => {
   }
 
   return (
-    <SafeAreaView style={styles.primaryContainer}>
-      <Image 
-        source={require("../assets/images/img4.jpeg")} 
-        style={styles.secondImg} 
-        resizeMode="cover"
-      />
+    <SafeAreaView style={styles.Container}>
+      
       
       <Text style={styles.Elearning}>
         Log in to continue your learning journey

@@ -24,7 +24,7 @@ const Splash=()=>{
     return null;
   }
   return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.Container} >
         <View style={styles.secondaryContainer}>
           <Image source={Img} style={styles.image} />
           <Text style={styles.mainTitle}><Text style={styles.Elearning}>E-Learning</Text>

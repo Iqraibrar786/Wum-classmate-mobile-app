@@ -17,19 +17,13 @@ const CreateClass = () => {
                      }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.Container}>
       <View style={styles.primaryContainer}>
         {/* Header */}
           <View style={styles.navbarIcon}>
-        <TouchableOpacity
-        onPress={home}>
-          <Entypo name="cross" size={28} color="black" />
-        </TouchableOpacity>
-          <Text style={styles.navbarIconText}>Create class</Text>
-          <TouchableOpacity
-          onPress={cardscreen}>
-          <Text style={styles.disabledText}>Create</Text>
-          </TouchableOpacity>
+       
+          <Text style={styles.navbarIconText}>Create Your class</Text>
+    
       </View>
 
         {/* Input Fields */}
@@ -41,5 +35,4 @@ const CreateClass = () => {
     </SafeAreaView>
   );
 };
-
 export default CreateClass;

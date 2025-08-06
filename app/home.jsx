@@ -14,18 +14,7 @@ const Home = () => {
                      router.push("/joinclass");
                    }
   return (
-    <SafeAreaView style={styles.primaryContainer}>
-
-              <View style={styles.navContainer}>
-       {/* Navbar */}
-      <TouchableOpacity>
-        <Icon name="menu" size={28} color="#000" marginTop={13} />
-      </TouchableOpacity>
-      <Text style={styles.title}>Google Classroom</Text>
-      <TouchableOpacity>
-        <Icon name="more-vert" size={24} color="#000" marginTop={13}/>
-      </TouchableOpacity>
-      </View>     
+    <SafeAreaView style={styles.Container}>
       <Text style={styles.helpText}>Don't see your classes?{"\n"}Try another account</Text>
               
        <View style={styles.image}>

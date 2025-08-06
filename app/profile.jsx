@@ -12,18 +12,8 @@ export default function ProfileScreen() {
       router.push("/editprofile");
     }
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
-        {/* Navbar */}
-        <View style={styles.navContainer}>
-          <TouchableOpacity>
-            <AntDesign name="arrowleft" size={24} color="black" marginTop={20}/>
-          </TouchableOpacity>
-          <Text style={styles.title}>My Profile</Text>
-          <TouchableOpacity>
-            <AntDesign name="setting" size={24} color="black" marginTop={20}/>
-          </TouchableOpacity>
-        </View>
+    <SafeAreaView style={styles.Container}>
+      <View >
 
         {/* Profile Image and Name */}
         <View style={styles.userprofileContainer}>
