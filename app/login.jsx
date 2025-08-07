@@ -13,6 +13,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Login = () => {
   const router = useRouter();
+   function forgotpass(){
+                         router.push("/forgotpass");
+                       }
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -94,7 +97,8 @@ const Login = () => {
           />
           <Text style={styles.rememberText}>Remember me</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={forgotpass}>
           <Text style={styles.link}>Forgot password?</Text>
         </TouchableOpacity>
       </View>
