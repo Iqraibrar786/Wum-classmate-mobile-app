@@ -8,19 +8,19 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Login = () => {
   const router = useRouter();
-   function forgotpass(){
-                         router.push("/forgotpass");
-                       }
+  function forgotpass() {
+    router.push("/forgotpass");
+  }
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  
+
   const [fontsLoaded] = useFonts({
     "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
     "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
@@ -34,7 +34,7 @@ const Login = () => {
       return;
     }
     console.log("Login attempt with:", { email, password, rememberMe });
-    router.push("/registration");
+    router.push("/otp");
   };
 
   const toggleShowPassword = () => {
@@ -47,8 +47,6 @@ const Login = () => {
 
   return (
     <SafeAreaView style={styles.Container}>
-      
-      
       <Text style={styles.Elearning}>
         Log in to continue your learning journey
       </Text>
@@ -80,7 +78,7 @@ const Login = () => {
         />
         <TouchableOpacity onPress={toggleShowPassword}>
           <Ionicons
-            name={showPassword ? 'eye' : 'eye-off'}
+            name={showPassword ? "eye" : "eye-off"}
             size={22}
             color="#888"
           />
@@ -93,21 +91,32 @@ const Login = () => {
           <CheckBox
             value={rememberMe}
             onValueChange={setRememberMe}
-            tintColors={{ true: '#3D5CFF', false: 'gray' }}
+            tintColors={{ true: "#3D5CFF", false: "gray" }}
           />
           <Text style={styles.rememberText}>Remember me</Text>
         </View>
-        <TouchableOpacity
-        onPress={forgotpass}>
-          <Text style={styles.link}>Forgot password?</Text>
+        <TouchableOpacity onPress={forgotpass}>
+          <Text
+            style={{
+              marginRight: -40,
+              marginLeft: 80,
+              color: "rgb(28, 117, 234)",
+              fontWeight: "500",
+              textDecorationLine: "underline",
+            }}
+          >
+            Forgot password?
+          </Text>
         </TouchableOpacity>
       </View>
 
       {/* Login Button */}
       {/* Add disabled state on login button when field are empty */}
       <TouchableOpacity
-
-        style={[styles.primaryButton, (!email || !password) && styles.disabledButton]}
+        style={[
+          styles.primaryButton,
+          (!email || !password) && styles.disabledButton,
+        ]}
         onPress={handleLogin}
         disabled={!email || !password}
       >
@@ -120,7 +129,7 @@ const Login = () => {
         <Text style={styles.dividerText}>Other login options</Text>
         <View style={styles.dividerLine} />
       </View>
-      
+
       {/* Social Icons */}
       <View style={styles.boxContainer}>
         <TouchableOpacity style={styles.iconBox}>

@@ -31,7 +31,6 @@ export default function ClassInfo() {
 
     switch(label){
       case "Stream":
-        router.push("/stream");
         break;
         case "Classwork":
           router.push("/assigning");
@@ -67,8 +66,10 @@ export default function ClassInfo() {
       </View>
     );
   };
+
+
   return (
-    <SafeAreaView style={styles.primaryContainer}>
+    <SafeAreaView style={styles.Container}>
       {" "}
         {/* Header */}
         <View style={styles.header}>
@@ -107,8 +108,8 @@ export default function ClassInfo() {
             fontSize: 16,
             marginLeft: -5,
             alignSelf: "center",
-            marginTop: 100,
-            marginBottom: 35,
+            marginTop: 60,
+            marginBottom: 30,
           }}
         >
           This is where you can talk to our class

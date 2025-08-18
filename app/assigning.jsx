@@ -14,7 +14,7 @@ const AssigningScreen = () => {
     router.push("/creatework");
   }
   return (
-    <SafeAreaView style={styles.primaryContainer}>
+    <SafeAreaView style={styles.Container}>
       {/* Image */}
       <View style={styles.image}>
         <Image source={Img} style={styles.secondImg} />

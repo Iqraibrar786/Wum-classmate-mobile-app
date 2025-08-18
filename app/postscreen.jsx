@@ -20,22 +20,9 @@ const MaterialUploadScreen = () => {
                          }
   const [Classcode, setClasscode] = useState("");
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.Container}>
       <View style={styles.primaryContainer}>
-        {/* Navbar */}
-        <View style={styles.navContainer}>
-          <TouchableOpacity>
-            <Entypo name="cross" size={28} color="black" marginTop={33} />
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.postBtn}>
-            <Text style={styles.postBtnText}>Post</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Icon name="more-vert" size={24} color="#000" marginTop={33}/>
-          </TouchableOpacity>
-        </View>
+        
         <Text style={styles.name}>Material tital (Required)</Text>
 
         {/* Divider */}

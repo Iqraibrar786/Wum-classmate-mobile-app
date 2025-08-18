@@ -15,7 +15,7 @@ const forgotpass =()=>{
     return (
         <View style={styles.Container}>
         <Text style={styles.sideTitle}>Forgot Password</Text>
-        <Text style={styles.sideDescription}>Please enter the password associate with your account.</Text>
+        <Text style={styles.sideDescription}>Please enter the email associate with your account.</Text>
 
         <View style={styles.userbtnContainer}>
         <TextInput

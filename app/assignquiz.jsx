@@ -16,7 +16,7 @@ const MaterialUploadScreen = () => {
   const [Classcode, setClasscode] = useState("");
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.Container}>
       <View style={styles.primaryContainer}>
        
         <Text style={styles.name}>Assignment title (Required)</Text>

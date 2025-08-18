@@ -5,14 +5,7 @@ import { useRouter } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
 const CreateClass = () => {
    const router=useRouter();
-                     function home(){
-                       router.push("/home");
-                     }
-                     const routerB=useRouter();
-                     function classinfo(){
-                       router.push("/classinfo");
-                     }
-                      function cardscreen(){
+                     function cardscreen(){
                        router.push("/cardscreen");
                      }
 
@@ -32,6 +25,10 @@ const CreateClass = () => {
         <TextInput style={styles.textInput} placeholder="Room"></TextInput>
         <TextInput style={styles.textInput} placeholder="Subject"></TextInput>
       </View>
+       <TouchableOpacity style={styles.primaryButton}
+       onPress={cardscreen}>
+              <Text style={styles.buttonText}>Create</Text>
+            </TouchableOpacity>
     </SafeAreaView>
   );
 };

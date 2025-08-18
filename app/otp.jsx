@@ -6,8 +6,8 @@ import { useRouter } from "expo-router";
 
 const Otp = () => {
           const router=useRouter();
-                 function home(){
-                   router.push("/home");
+                 function verified(){
+                   router.push("/verified");
                  }
   const numberOfInputs = 4;                                        //<----Define how many OTP digits the user must inputs
   const [otp, setOtp] = useState(Array(numberOfInputs).fill('')); //<----Initialize array of 4 empty strings each OTP digit is separately
@@ -39,7 +39,7 @@ const Otp = () => {
   return (
     <SafeAreaView style={styles.Container}>
       <StatusBar barStyle="dark-content" />
-      <Text style={styles.sideTitle}>OTP Verification!{<>    </>}</Text>
+      <Text style={styles.sideTitle}>OTP Verification!</Text>
 
       {/* Phone Number Section */}
       <Text style={styles.sideDescription}>
@@ -82,7 +82,7 @@ const Otp = () => {
         </View>
 
       <TouchableOpacity style={styles.primaryButton}
-      onPress={home}>
+      onPress={verified}>
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
     </SafeAreaView>

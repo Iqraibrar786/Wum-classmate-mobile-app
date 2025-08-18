@@ -10,8 +10,8 @@ import { TextInput } from "react-native";
 const announcement = () => {
   return (
     // First card
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
+    <SafeAreaView style={styles.primaryContainer}>
+      <View >
 
         {/* Card */}
         <LinearGradient

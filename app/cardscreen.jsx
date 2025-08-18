@@ -1,95 +1,101 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../styles/global";
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { MaterialIcons } from '@expo/vector-icons';
+import Icon from "react-native-vector-icons/MaterialIcons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const BackendCard = () => {
   const router = useRouter();
-  
-  function announcement() {
-    router.push("/announcement");
+
+  function classinfo() {
+    router.push("/classinfo");
   }
 
   // Card data array
   const cardsData = [
     {
       id: 1,
-      colors: ['#f7c13e', "#2A2575"],
+      colors: ["#f7c13e", "#2A2575"],
       start: { x: 0, y: 0 },
       end: { x: 1, y: 0 },
       title: "IT 6th Semester",
       description: "Section B",
-      students: "54 students"
+      students: "54 students",
     },
     {
       id: 2,
-      colors: ['#00F3FF', "#E0B69E"],
+      colors: ["#00F3FF", "#E0B69E"],
       start: { x: 1, y: 0 },
       end: { x: 0, y: 0 },
       title: "Mobile Application",
       description: "Section B",
-      students: "4 students"
+      students: "4 students",
     },
     {
       id: 3,
-      colors: ["#2A2575", '#00FFBC'],
+      colors: ["#2A2575", "#00FFBC"],
       start: { x: 0, y: 0 },
       end: { x: 2, y: 0 },
       title: "IT 6th Semester",
       description: "Section B",
-      students: "12 students"
+      students: "12 students",
     },
     {
       id: 4,
-      colors: ["#cd6155", '#839192'],
+      colors: ["#cd6155", "#839192"],
       start: { x: 0, y: 0 },
       end: { x: 2, y: 0 },
       title: "IT 6th Semester",
       description: "Section B",
-      students: "4 students"
+      students: "4 students",
     },
     {
       id: 5,
-      colors: ['rgb(147, 147, 215)', '#00FFBC'],
+      colors: ["rgb(147, 147, 215)", "#00FFBC"],
       start: { x: 0, y: 0 },
       end: { x: 2, y: 0 },
       title: "IT 6th Semester",
       description: "Section B",
-      students: "4 students"
+      students: "4 students",
     },
     {
       id: 6,
-      colors: ["#cd6155", '#899192'],
+      colors: ["#cd6155", "#899192"],
       start: { x: 0, y: 0 },
       end: { x: 2, y: 0 },
       title: "IT 6th Semester",
       description: "Section B",
-      students: "4 students"
+      students: "4 students",
     },
     {
       id: 7,
-      colors: ['#00F3FF', "#E0B69E"],
+      colors: ["#00F3FF", "#E0B69E"],
       start: { x: 1, y: 0 },
       end: { x: 0, y: 0 },
       title: "Mobile Application",
       description: "Section B",
-      students: "4 students"
-    }
+      students: "4 students",
+    },
   ];
 
   return (
     <View style={{ flex: 1 }}>
-
       {/* Scrollable Content */}
       <ScrollView style={{ flex: 1 }}>
         <SafeAreaView style={styles.container}>
           <View style={styles.primaryContainer}>
             {/* Render cards using map */}
             {cardsData.map((card) => (
-              <TouchableOpacity key={card.id} onPress={announcement}>
+              <TouchableOpacity key={card.id} onPress={classinfo}>
                 <LinearGradient
                   colors={card.colors}
                   start={card.start}
@@ -99,7 +105,9 @@ const BackendCard = () => {
                   <View style={styles.cardContent}>
                     <View style={{ flex: 1 }}>
                       <Text style={styles.cardTitle}>{card.title}</Text>
-                      <Text style={styles.descriptionTitle}>{card.description}</Text>
+                      <Text style={styles.descriptionTitle}>
+                        {card.description}
+                      </Text>
                       <Text style={styles.students}>{card.students}</Text>
                     </View>
                     <TouchableOpacity>

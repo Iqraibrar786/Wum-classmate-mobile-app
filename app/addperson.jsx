@@ -25,8 +25,8 @@ export default function InviteScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
+    <SafeAreaView style={styles.Container}>
+      <View >
 
         {/* Teachers Section */}
         <View style={styles.userbtnContainer}>
