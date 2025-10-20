@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "../styles/global";
 import { useRouter } from "expo-router";
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const verifiedscreen =()=>{

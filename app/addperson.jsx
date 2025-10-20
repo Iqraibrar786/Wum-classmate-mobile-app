@@ -10,7 +10,7 @@ import {
 import styles from "../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-export default function InviteScreen() {
+const InviteScreen = () => {
   const [teacherText, setTeacherText] = useState("");
   const [studentText, setStudentText] = useState("");
 
@@ -86,3 +86,4 @@ export default function InviteScreen() {
     </SafeAreaView>
   );
 }
+export default InviteScreen;

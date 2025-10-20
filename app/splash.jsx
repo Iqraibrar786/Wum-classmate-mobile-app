@@ -24,12 +24,10 @@ const Splash=()=>{
     return null;
   }
   return (
-      <SafeAreaView style={styles.Container} >
-        <View style={styles.secondaryContainer}>
+      <SafeAreaView style={styles.Container}>
           <Image source={Img} style={styles.image} />
           <Text style={styles.mainTitle}><Text style={styles.Elearning}>E-Learning</Text>
           </Text>
-        </View>
       </SafeAreaView>
   );
 }

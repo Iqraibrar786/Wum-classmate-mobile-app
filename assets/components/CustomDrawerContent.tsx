@@ -9,7 +9,7 @@ export default function CustomDrawerContent(props: any) {
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView
         {...props}
-        scrollEnabled={false}>
+        scrollEnabled={true}>
         <View style={{padding:20}}>
             <Image
             source={{uri: 'https://i.postimg.cc/5tzrrC04/519526019-17972329046873762-1705704639409662658-n-webp-1.jpg'}}
@@ -18,7 +18,6 @@ export default function CustomDrawerContent(props: any) {
             <Text style={styles.profileName}>Mr Allah Rakha</Text>
              <Text style={styles.caption}>@_AR</Text>
         </View>
-        <View style={styles.userInfosection}></View>
         
         <DrawerItemList {...props} />
         <DrawerItem label={"Logout"} onPress={() => router.replace("/")} />

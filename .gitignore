@@ -4,9 +4,11 @@
 ### ReactNative ###
 # React Native Stack Base
 
+# Dependency directories
 package-lock.json
-package.json
-tsconfig.json
+node_modules/
+yarn.lock
+.pnpm-store/
 
 .vscode
 .idea
