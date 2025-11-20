@@ -25,9 +25,9 @@ const AssigningScreen = () => {
         style={{
           fontSize: 17,
           alignSelf: "center",
-          marginTop: 180,
+          marginTop: 100,
           marginBottom: 50,
-          marginLeft: -38,
+          // marginLeft: -38,
         }}
       >
         This is where you'll assign work

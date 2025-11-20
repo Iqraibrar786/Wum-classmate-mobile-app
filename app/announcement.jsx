@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View,Image,Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -7,6 +7,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Entypo from "react-native-vector-icons/Entypo";
 import Foundation from "@expo/vector-icons/Foundation";
 import { TextInput } from "react-native";
+const Img = require("../assets/images/img3.jpeg");
+
 const announcement = () => {
   return (
     // First card
@@ -69,6 +71,24 @@ const announcement = () => {
            style={styles.commentInput}/>
         </View>
       </View>
+      {/* Image */}
+      <View style={styles.secondImg}>
+        <Image source={Img} style={styles.image} />
+      </View>
+
+      <Text
+        style={{
+          marginTop: 20,
+          alignSelf: "center",
+        }}
+      >
+        This is where you can talk to our class
+      </Text>
+
+      <Text style={styles.helpText}>
+        Use the stream to share announcements, post assignments and respond to
+        questions
+      </Text>
     </SafeAreaView>
   );
 };

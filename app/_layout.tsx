@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 import { Ionicons } from '@expo/vector-icons';
 import CustomDrawerContent from '../assets/components/CustomDrawerContent';
-
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 const Layout=()=> {
@@ -12,27 +11,27 @@ const Layout=()=> {
       <Drawer
        drawerContent={(props) => <CustomDrawerContent {...props} />}
        screenOptions={{
-        drawerActiveBackgroundColor: '#5363df',
+        drawerActiveBackgroundColor: '#53df68ff',
         drawerActiveTintColor: '#fff',
        }}>
         <Drawer.Screen
-          name="home"
+          name="Stream"
           options={{
-            drawerLabel: 'Home',
+            drawerLabel: 'Stream',
             headerTitle: 'Google Classroom',
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="home-outline" size={size} color={color} />
+              <Ionicons name="stream" size={size} color={color} />
             ),
           }}
           />
 
            <Drawer.Screen
-          name="calendar"
+          name="Classwork"
           options={{
-            drawerLabel: 'Calendar',
+            drawerLabel: 'Classwork',
             headerTitle: 'Google Classroom',
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="calendar-clear-outline" size={size} color={color} />
+            <MaterialCommunityIcons name="clipboard-multiple-outline" size={24} color="black" />
             ),
           }}
         />
@@ -43,7 +42,7 @@ const Layout=()=> {
             drawerLabel: 'Profile',
             headerTitle: 'Google Classroom',
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="person-outline" size={size} color={color} />
+              <Ionicons name="face-man-profile" size={24} color="black" />
             ),
           }}
         />
