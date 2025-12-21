@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-const Img = require("../assets/images/img5.jpg");
+const Img = require("../../assets/images/img5.jpg");
 
 const AssigningScreen = () => {
   const router = useRouter();

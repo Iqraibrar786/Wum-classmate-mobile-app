@@ -1,13 +1,13 @@
 import React from "react";
 import { View,Image,Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Entypo from "react-native-vector-icons/Entypo";
 import Foundation from "@expo/vector-icons/Foundation";
 import { TextInput } from "react-native";
-const Img = require("../assets/images/img3.jpeg");
+const Img = require("../../assets/images/img3.jpeg");
 
 const announcement = () => {
   return (

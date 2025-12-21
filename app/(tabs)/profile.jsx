@@ -3,7 +3,7 @@ import { View,Image, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 
 

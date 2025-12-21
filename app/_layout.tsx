@@ -11,7 +11,7 @@ const Layout=()=> {
       <Drawer
        drawerContent={(props) => <CustomDrawerContent {...props} />}
        screenOptions={{
-        drawerActiveBackgroundColor: '#53df68ff',
+        drawerActiveBackgroundColor: "rgb(147, 147, 215)",
         drawerActiveTintColor: '#fff',
        }}>
         <Drawer.Screen

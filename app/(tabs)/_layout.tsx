@@ -1,8 +1,9 @@
+// export { default } from "./_layout.web";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import {Icon, Label, NativeTabs, VectorIcon} from 'expo-router/unstable-native-tabs';
 import {Platform} from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import {Tabs} from 'expo-router';
 const Page = () => {
     return (
         <NativeTabs minimizeBehavior="onScrollDown">
@@ -16,7 +17,7 @@ const Page = () => {
             </NativeTabs.Trigger>
 
 
-              {/* Class-work  */}
+           {/* Class-work  */}
              <NativeTabs.Trigger name="assigning">
                 <Label>Classwork</Label>
                 {Platform.select({
@@ -25,6 +26,7 @@ const Page = () => {
                 })}
             </NativeTabs.Trigger>
             
+
             {/* add Person/People  */}
             <NativeTabs.Trigger name="addperson">
                 <Label>People</Label>
@@ -34,6 +36,8 @@ const Page = () => {
                 })}
             </NativeTabs.Trigger> 
 
+
+            {/* Profile  */}
             <NativeTabs.Trigger name="profile">
                 <Label>Profile</Label>
                 {Platform.select({
@@ -44,4 +48,8 @@ const Page = () => {
         </NativeTabs>
     )
 };
+
+
+
+
 export default Page;

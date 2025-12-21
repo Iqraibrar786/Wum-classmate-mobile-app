@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 const InviteScreen = () => {
@@ -73,7 +73,7 @@ const InviteScreen = () => {
         </View>
         
         {/* Image */}
-        <Image source={require("../assets/images/class1img.jpg")} style={styles.image} />
+        <Image source={require("../../assets/images/class1img.jpg")} style={styles.image} />
 
         {/* Invite Text */}
         <Text style={styles.subTitle}>Invite students to your class</Text>

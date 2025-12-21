@@ -2,6 +2,7 @@ import {DrawerContentScrollView,DrawerItem,DrawerItemList,} from "@react-navigat
 import { useRouter } from "expo-router";
 import { View,Image,Text} from "react-native";
 import styles from "../../styles/global";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function CustomDrawerContent(props: any) {
   const router = useRouter();
@@ -19,8 +20,38 @@ export default function CustomDrawerContent(props: any) {
              <Text style={styles.caption}>@_AR</Text>
         </View>
         
-        <DrawerItemList {...props} />
-        <DrawerItem label={"Logout"} onPress={() => router.replace("/")} />
+        {/* Custom Drawer Items */}
+        <DrawerItem
+          label="Notifications"
+          icon={({ color, size }) => (
+            <MaterialIcons name="notifications" size={size} color={color} />
+          )}
+          onPress={() => router.push("/notifications")}
+        />
+
+        <DrawerItem
+          label="Classroom"
+          icon={({ color, size }) => (
+            <MaterialIcons name="class" size={size} color={color} />
+          )}
+          onPress={() => router.push("/classroom")}
+        />
+
+        <DrawerItem
+          label="Help"
+          icon={({ color, size }) => (
+            <MaterialIcons name="help-outline" size={size} color={color} />
+          )}
+          onPress={() => router.push("/help")}
+        />
+
+        <DrawerItem
+          label="Logout"
+          icon={({ color, size }) => (
+            <MaterialIcons name="logout" size={size} color={color} />
+          )}
+          onPress={() => router.replace("/")}
+        />
       </DrawerContentScrollView>
     </View>
   );

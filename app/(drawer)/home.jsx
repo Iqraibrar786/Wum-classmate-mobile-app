@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView,Image } from 'react-native';
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import Icon from 'react-native-vector-icons/MaterialIcons';
-const Img = require("../assets/images/class1img.jpg");
+const Img = require("../../assets/images/class1img.jpg");
 
 const Home = () => {
   const router=useRouter();

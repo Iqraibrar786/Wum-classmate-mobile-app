@@ -2,9 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": [
-      "ESNext"
-    ],
+     "lib": ["esnext", "dom"],
+     
     "jsx": "react-jsx",
     "allowJs": true,
     "checkJs": false,
@@ -15,7 +14,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "moduleResolution": "bundler",
-    "strict": false
+    "strict": true
   },
   "include": [
     "**/*.ts",
@@ -30,5 +29,5 @@
     "android",
     "ios"
   ],
-  "extends": "expo/tsconfig.base"
+  "extends": "expo/tsconfig.base",
 }
