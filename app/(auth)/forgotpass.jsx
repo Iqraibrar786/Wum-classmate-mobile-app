@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import resetpass from './resetpass';
+// import resetpass from './resetpasss';
+
 
 const forgotpass =()=>{
     const router=useRouter();

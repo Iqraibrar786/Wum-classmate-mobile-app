@@ -1,9 +1,8 @@
-// export { default } from "./_layout.web";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import {Icon, Label, NativeTabs, VectorIcon} from 'expo-router/unstable-native-tabs';
 import {Platform} from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import {Tabs} from 'expo-router';
+
 const Page = () => {
     return (
         <NativeTabs minimizeBehavior="onScrollDown">

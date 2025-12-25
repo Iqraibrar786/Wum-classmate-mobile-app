@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -7,8 +7,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 const verifiedscreen =()=>{
 
     const router=useRouter();
-                       function home(){
-                         router.push("/home");
+                       function classroom(){
+                         router.push("/classroom");
                        }
      
     return (
@@ -20,7 +20,7 @@ const verifiedscreen =()=>{
 
    
      <TouchableOpacity style={styles.primaryButton}
-     onPress={home}>
+     onPress={classroom}>
               <Text style={styles.buttonText}>Done</Text>
             </TouchableOpacity>
       </SafeAreaView>

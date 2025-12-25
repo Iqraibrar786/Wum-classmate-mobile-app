@@ -8,16 +8,23 @@ import {
   StyleSheet,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import JoinCreate from "../joincreate";
 
 const BackendCard = () => {
   const router = useRouter();
 
-  function classinfo() {
-    router.push("/classinfo");
+  function announcement() {
+    router.push("/announcement");
+  }
+  function JoinCreate() {
+    router.push("/joincreate");
+  }
+  function gotocardinfo(){
+    router.push("/cardinfo");
   }
 
   // Card data array
@@ -95,7 +102,7 @@ const BackendCard = () => {
           <View style={styles.primaryContainer}>
             {/* Render cards using map */}
             {cardsData.map((card) => (
-              <TouchableOpacity key={card.id} onPress={classinfo}>
+              <TouchableOpacity key={card.id} onPress={announcement}>
                 <LinearGradient
                   colors={card.colors}
                   start={card.start}
@@ -110,7 +117,7 @@ const BackendCard = () => {
                       </Text>
                       <Text style={styles.students}>{card.students}</Text>
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={gotocardinfo}>
                       <Icon name="more-vert" size={24} color="#fff" />
                     </TouchableOpacity>
                   </View>
@@ -122,7 +129,7 @@ const BackendCard = () => {
       </ScrollView>
 
       {/* Static Add Button */}
-      <TouchableOpacity style={styles.addButton}>
+      <TouchableOpacity style={styles.addButton}onPress={JoinCreate}>
         <MaterialIcons name="add" size={28} color="#dea019" />
       </TouchableOpacity>
     </View>

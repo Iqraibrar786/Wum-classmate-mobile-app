@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, TextInput, SafeAreaView, TouchableOpacity } from "react-native";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
 const CreateClass = () => {
    const router=useRouter();
-                     function cardscreen(){
-                       router.push("/cardscreen");
+                     function classroom(){
+                       router.push("/classroom");
                      }
 
   return (
@@ -26,7 +26,7 @@ const CreateClass = () => {
         <TextInput style={styles.textInput} placeholder="Subject"></TextInput>
       </View>
        <TouchableOpacity style={styles.primaryButton}
-       onPress={cardscreen}>
+       onPress={classroom}>
               <Text style={styles.buttonText}>Create</Text>
             </TouchableOpacity>
     </SafeAreaView>

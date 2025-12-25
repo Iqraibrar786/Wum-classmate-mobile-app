@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import styles from "../styles/global";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { Image } from "react-native";
+import styles from "../../styles/global";
 import CheckBox from "expo-checkbox";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
@@ -10,6 +11,10 @@ import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { navigationRoutes } from "../../constants/navigation";
+import { validation, getErrorMessage } from "../../utils/validation";
+
+const Img = require("../../assets/images/img4.jpeg");
 
 const Login = () => {
   const router = useRouter();
@@ -20,21 +25,41 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const [fontsLoaded] = useFonts({
-    "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
-    "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
-    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
+    "Poppins-ExtraBold": require("../../assets/fonts/Poppins-ExtraBold.ttf"),
+    "Poppins-Medium": require("../../assets/fonts/Poppins-Medium.ttf"),
+    "Poppins-Regular": require("../../assets/fonts/Poppins-Regular.ttf"),
   });
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (validation.isEmpty(email)) {
+      newErrors.email = getErrorMessage('email', 'empty');
+    } else if (!validation.isValidEmail(email)) {
+      newErrors.email = getErrorMessage('email', 'invalid');
+    }
+
+    if (validation.isEmpty(password)) {
+      newErrors.password = getErrorMessage('password', 'empty');
+    } else if (!validation.isValidPassword(password)) {
+      newErrors.password = getErrorMessage('password', 'invalid');
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleLogin = () => {
-    // Basic validation
-    if (!email.trim() || !password.trim()) {
-      alert("Please enter both email and password");
+    if (!validateForm()) {
+      Alert.alert('Validation Error', 'Please fix the errors before');
       return;
     }
+
     console.log("Login attempt with:", { email, password, rememberMe });
-    router.push("/otp");
+    router.push(navigationRoutes.OTP);
   };
 
   const toggleShowPassword = () => {
@@ -47,6 +72,7 @@ const Login = () => {
 
   return (
     <SafeAreaView style={styles.Container}>
+      <Image source={Img} style={styles.image} />
       <Text style={styles.Elearning}>
         Log in to continue your learning journey
       </Text>
@@ -64,6 +90,7 @@ const Login = () => {
         />
         <MaterialIcons name="email" size={24} color="#ccc" />
       </View>
+      {errors.email && <Text style={{ color: 'red', marginLeft: 20, fontSize: 12 }}>{errors.email}</Text>}
 
       {/* Password Input */}
       <View style={styles.userbtnContainer}>
@@ -84,6 +111,7 @@ const Login = () => {
           />
         </TouchableOpacity>
       </View>
+      {errors.password && <Text style={{ color: 'red', marginLeft: 20, fontSize: 12 }}>{errors.password}</Text>}
 
       {/* Remember Me & Forgot Password */}
       <View style={styles.row}>

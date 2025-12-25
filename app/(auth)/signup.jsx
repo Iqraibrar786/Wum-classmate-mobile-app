@@ -1,6 +1,6 @@
 import React from "react";
 import {View, Text, TouchableOpacity, TextInput,Image} from "react-native";
-import styles from "../styles/global";
+import styles from "../../styles/global";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 import { useState } from "react";
@@ -9,13 +9,14 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+
 const SignUp = () => {
      const router=useRouter();
       function gotologin(){
         router.push("/login");
       }
-      function gotohome(){
-        router.push("/home");
+      function gotoclassroom(){
+        router.push("/classroom");
       }
    const [name, setName] = useState("");
    const [password, setPassword] = useState("");
@@ -23,9 +24,9 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
    
    const [fontsLoaded] = useFonts({
-       "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
-       "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
-       "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
+       "Poppins-ExtraBold": require("../../assets/fonts/Poppins-ExtraBold.ttf"),
+       "Poppins-Medium": require("../../assets/fonts/Poppins-Medium.ttf"),
+       "Poppins-Regular": require("../../assets/fonts/Poppins-Regular.ttf"),
      });
 
       const toggleShowPassword = () => {
@@ -37,7 +38,8 @@ const SignUp = () => {
      }
 
   return (
-    <SafeAreaView sytle={styles.Container}>
+    <SafeAreaView style={styles.Container}>
+      <Text style={styles.Elearning}>SignUp!</Text>
       <Text style={styles.mainTitle}>Create account</Text>
       
       <View style={styles.inputContainer}>
@@ -102,7 +104,7 @@ const SignUp = () => {
       </View>
       
       <TouchableOpacity style={styles.primaryButton}
-      onPress={gotohome}>
+      onPress={gotoclassroom}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
       
