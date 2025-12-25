@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text, TextInput, SafeAreaView, TouchableOpacity } from "react-native";
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
+import { navigationRoutes } from "../../constants/navigation";
 const CreateClass = () => {
    const router=useRouter();
                      function classroom(){
-                       router.push("/classroom");
+                       router.push(navigationRoutes.CLASSROOM);
                      }
 
   return (

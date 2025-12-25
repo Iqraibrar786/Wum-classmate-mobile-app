@@ -3,11 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, SafeAreaView } from 'react-nat
 import styles from "../../styles/global";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 
 const Otp = () => {
           const router=useRouter();
                  function verified(){
-                   router.push("/verified");
+                   router.push(navigationRoutes.VERIFIED);
                  }
   const numberOfInputs = 4;                                        //<----Define how many OTP digits the user must inputs
   const [otp, setOtp] = useState(Array(numberOfInputs).fill('')); //<----Initialize array of 4 empty strings each OTP digit is separately

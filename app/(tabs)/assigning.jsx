@@ -5,13 +5,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 const Img = require("../../assets/images/img5.jpg");
 
 const AssigningScreen = () => {
   const router = useRouter();
 
   function creatework() {
-    router.push("/creatework");
+    router.push(navigationRoutes.CREATEWORK);
   }
   return (
     <SafeAreaView style={styles.Container}>

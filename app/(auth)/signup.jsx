@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, TextInput,Image} from "react-native";
 import styles from "../../styles/global";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -13,10 +14,10 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 const SignUp = () => {
      const router=useRouter();
       function gotologin(){
-        router.push("/login");
+        router.push(navigationRoutes.LOGIN);
       }
       function gotoclassroom(){
-        router.push("/classroom");
+        router.push(navigationRoutes.CLASSROOM);
       }
    const [name, setName] = useState("");
    const [password, setPassword] = useState("");

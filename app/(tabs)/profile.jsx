@@ -5,7 +5,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
-
+import { navigationRoutes } from "../../constants/navigation";
 
 // Local file you uploaded (developer-provided path)
 const AVATAR_URI =
@@ -15,14 +15,14 @@ export default function ProfileScreen() {
   const router=useRouter();
 
     function editprofile(){
-      router.push("/editprofile");
+      router.push(navigationRoutes.EDITPROFILE);
     }
     function onChangePassword() {
-    router.push("/change-password");
+    router.push(navigationRoutes.CHANGEPASSWORD);
   }
     function onLogout() {
     // add logout logic (clear tokens, navigate to auth)
-    router.push("/login");
+    router.push(navigationRoutes.LOGIN);
   }
   return (
     <SafeAreaView style={styles.Container}>

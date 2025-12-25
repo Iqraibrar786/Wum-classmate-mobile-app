@@ -8,17 +8,18 @@ import {
 import styles from "../../styles/global";
 import { useFonts } from 'expo-font';
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Img = require("../../assets/images/class2img.jpg");
 
 const Onboarding2=()=> {
    const router=useRouter();
     function gotosignup(){
-      router.push("/signup");
+      router.push(navigationRoutes.SIGNUP);
     }
     
     function gotologin(){
-      router.push("/login");
+      router.push(navigationRoutes.LOGIN);
     }
   const [fontsLoaded] = useFonts({
     'Poppins-ExtraBold': require('../../assets/fonts/Poppins-ExtraBold.ttf'),

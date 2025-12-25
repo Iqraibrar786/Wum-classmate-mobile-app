@@ -3,6 +3,7 @@ import { Text, Image, TouchableOpacity } from "react-native";
 import styles from "../../styles/global";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Img = require("../../assets/images/class5img.jpg");
 
@@ -10,10 +11,10 @@ const Onboarding1 = () => {
   const router=useRouter();
 
   function gotoonboarding2(){
-    router.push("/onboarding2");
+    router.push(navigationRoutes.ONBOARDING2);
   }
   function gotosplash(){
-    router.push("/splash")
+    router.push(navigationRoutes.SPLASH)
   }
   
   const [fontsLoaded] = useFonts({

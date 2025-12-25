@@ -12,19 +12,19 @@ import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import JoinCreate from "../joincreate";
+import { navigationRoutes } from "../../constants/navigation";
 
 const BackendCard = () => {
   const router = useRouter();
 
   function announcement() {
-    router.push("/announcement");
+    router.push(navigationRoutes.ANNOUNCEMENT);
   }
   function JoinCreate() {
-    router.push("/joincreate");
+    router.push(navigationRoutes.JOINCREATE);
   }
   function gotocardinfo(){
-    router.push("/cardinfo");
+    router.push(navigationRoutes.CARDINFO);
   }
 
   // Card data array

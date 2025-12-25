@@ -850,7 +850,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: 315,
     height: 58,
-    borderColor: coloes.facebook,
+    borderColor: colors.facebook,
     borderRadius: 10,
     alignSelf: "center",
     marginTop: 10,

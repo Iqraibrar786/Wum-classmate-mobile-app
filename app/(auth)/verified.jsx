@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -8,7 +9,7 @@ const verifiedscreen =()=>{
 
     const router=useRouter();
                        function classroom(){
-                         router.push("/classroom");
+                         router.push(navigationRoutes.CLASSROOM);
                        }
      
     return (

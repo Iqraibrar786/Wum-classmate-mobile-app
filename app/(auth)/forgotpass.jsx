@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 // import resetpass from './resetpasss';
@@ -9,7 +10,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 const forgotpass =()=>{
     const router=useRouter();
                        function resetpass(){
-                         router.push("/resetpass");
+                         router.push(navigationRoutes.RESETPASS);
                        }
     const [email, setEmail] = useState("");
 

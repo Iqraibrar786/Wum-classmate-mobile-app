@@ -8,13 +8,16 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 // import Foundation from "@expo/vector-icons/Foundation";
 // import Entypo from "react-native-vector-icons/Entypo";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
 const JoinCreate = () => {
   const router=useRouter();
                            function createclass(){
-                             router.push("/createclass");
+-                             router.push("/createclass");
++                             router.push(navigationRoutes.CREATECLASS);
                            }
                            function joinclass(){
-                             router.push("/joinclass");
+-                             router.push("/joinclass");
++                             router.push(navigationRoutes.JOINCLASS);
                            }
   const bottomSheetRef = useRef(null);
 

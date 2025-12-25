@@ -7,16 +7,17 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Foundation from "@expo/vector-icons/Foundation";
 import Entypo from "react-native-vector-icons/Entypo";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
 const CreateBottomSheet = () => {
   const router=useRouter();
                            function assignquiz(){
-                             router.push("/assignquiz");
+                             router.push(navigationRoutes.ASSIGNQUIZ);
                            }
                            function postscreen(){
-                             router.push("/postscreen");
+                             router.push(navigationRoutes.POSTSCREEN);
                            }
                            function topiccreate(){
-                             router.push("/topiccreate");
+                             router.push(navigationRoutes.TOPICCREATE);
                            }
   // ref
   const bottomSheetRef = useRef(null);

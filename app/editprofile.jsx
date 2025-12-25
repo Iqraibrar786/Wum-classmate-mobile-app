@@ -4,10 +4,11 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../styles/global";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
 const EdirProfileScreen=()=> {
   const router=useRouter();
   function profile(){
-      router.push("/profile");
+      router.push(navigationRoutes.PROFILE);
     }
   const [showPassword, setShowPassword] = useState(false);
   return (

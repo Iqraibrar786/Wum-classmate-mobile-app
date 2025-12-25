@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import styles from "../styles/global";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
 import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -18,11 +19,11 @@ export default function ClassInfo() {
   const router = useRouter();
 
   function assigning() {
-    router.push("/assigning");
+    router.push(navigationRoutes.ASSIGNING);
   }
 
   function announcement() {
-    router.push("/announcement");
+    router.push(navigationRoutes.ANNOUNCEMENT);
   }
 
   return (

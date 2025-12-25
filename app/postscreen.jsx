@@ -13,10 +13,11 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from "../styles/global";
 import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
 const MaterialUploadScreen = () => {
     const router=useRouter();
                          function attachments(){
-                           router.push("/attachments");
+                           router.push(navigationRoutes.ATTACHMENTS);
                          }
   const [Classcode, setClasscode] = useState("");
   return (
