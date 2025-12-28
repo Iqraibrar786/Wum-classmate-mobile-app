@@ -21,7 +21,7 @@ const Layout = () => {
               size={26}
               color="#000"
               style={{ marginLeft: 15 }}
-              onPress={() => navigation.toggleDrawer()}
+              onPress={() => navigation.toggleDrawer()}  // TO OPRN OR CLOSE THE DRAWER
             />
           ),
         })}
@@ -29,7 +29,7 @@ const Layout = () => {
         <Drawer.Screen
           name="notification"
           options={{
-            title: 'Notifications',
+            headerTitle: 'My Notifications',
             drawerIcon: ({ color, size }) => (
               <Ionicons name="notifications-outline" size={size} color={color} />
             ),
@@ -39,7 +39,7 @@ const Layout = () => {
         <Drawer.Screen
           name="offlinefiles"
           options={{
-            title: 'Offline Files',
+            headerTitle: 'Offline Files',
             drawerIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="file-download-outline" size={size} color={color} />
             ),
@@ -49,7 +49,8 @@ const Layout = () => {
         <Drawer.Screen
           name="settings"
           options={{
-            title: 'Settings',
+            headerTitle: '',
+            headerShown: false,
             drawerIcon: ({ color, size }) => (
               <Ionicons name="settings-outline" size={size} color={color} />
             ),
@@ -76,6 +77,20 @@ const Layout = () => {
           }}
         />
       </Drawer>
+
+       <Drawer.Screen
+         name="joinclass"
+         options={{
+            headerRight: () => (
+      <Ionicons
+        name="refresh"
+        size={22}
+        style={{ marginRight: 15 }}
+        onPress={() => console.log('Refresh')}
+      />
+    ),
+  }}
+  />
     </GestureHandlerRootView>
   );
 };

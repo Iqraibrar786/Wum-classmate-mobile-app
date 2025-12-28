@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   image: {
     height: 150,
     width: 150,
-     backgroundColor: colors.secondary,
+    backgroundColor: colors.secondary,
     alignSelf: "center",
     justifyContent: "center",
   },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     marginBottom: -30,
-     backgroundColor: colors.secondary,
+    backgroundColor: colors.secondary,
     marginTop: 10,
     alignSelf: "center",
     justifyContent: "center",
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
   phoneNumber: {
     fontSize: 14,
     fontWeight: 500,
-    color: colors. primaryLight,
+    color: colors.primaryLight,
     marginRight: 160,
   },
 
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   inputFilled: {
-    backgroundColor: colors. info,
+    backgroundColor: colors.info,
   },
   inputActive: {
     backgroundColor: colors.active,
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: "center",
     marginLeft: 10,
-    color: colors. accent,
+    color: colors.accent,
     flexDirection: "row",
   },
   helpText: {
@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 1,
     alignSelf: "center",
-    backgroundColor: colors. gray300,
+    backgroundColor: colors.gray300,
   },
   dividerText: {
     paddingHorizontal: 10,
@@ -413,7 +413,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     margin: 15,
     padding: 12,
-    borderColor: colors. gray300,
+    borderColor: colors.gray300,
     borderWidth: 1,
     width: 320,
     height: 57,
@@ -517,7 +517,7 @@ const styles = StyleSheet.create({
   textInputBtn: {
     flex: 1,
     height: 50,
-    color: colors. accent,
+    color: colors.accent,
   },
   button: {
     padding: 8,
@@ -687,7 +687,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingVertical: 12,
     borderBottomWidth: 2,
-    borderBottomColor:  colors.gray200,
+    borderBottomColor: colors.gray200,
   },
   profileIconText: {
     fontSize: 14,
@@ -883,6 +883,36 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: "90%",
     alignSelf: "center",
-  }
+  },
+  joinButton: {
+    height: 45,
+    width: 70,
+    marginRight: 15,
+    padding: 5,
+    backgroundColor: colors.primaryLight,
+    borderRadius: 50,
+  },
+  joinButtonText: {
+    color: colors.secondary,
+    // fontSize: 16,
+    fontWeight: "bold",
+    alignSelf: "center",
+    marginTop: 7,
+  },
+  classCodeInput: {
+    borderWidth: 2,
+    width: 315,
+    height: 58,
+    borderRadius: 10,
+    marginLeft: 19,
+    marginTop: 10,
+    padding: 12,
+  },
+  error: {
+    color: "red",
+    marginLeft: 20,
+    fontSize: 12,
+    marginTop: 8,
+  },
 });
 export default styles;

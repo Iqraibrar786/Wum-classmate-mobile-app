@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Alert, Linking } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { useRouter } from "expo-router";
+import { useRouter, useNavigation } from "expo-router";
 import styles from "../../styles/global";
 import { navigationRoutes } from "../../constants/navigation";
 import { validation, getErrorMessage } from "../../utils/validation";
 
 const JoinClass = () => {
   const router = useRouter();
-  const [Classcode, setClasscode] = useState("");
+  const navigation = useNavigation();
+
+  const [classCode, setClassCode] = useState("");
   const [error, setError] = useState("");
 
   const handleJoinClass = () => {
     setError("");
 
-    if (validation.isEmpty(Classcode)) {
+    if (validation.isEmpty(classCode)) {
       setError(getErrorMessage('classCode', 'empty'));
       return;
     }
 
-    if (!validation.isValidClassCode(Classcode)) {
+    if (!validation.isValidClassCode(classCode)) {
       setError(getErrorMessage('classCode', 'invalid'));
       return;
     }
@@ -28,12 +30,28 @@ const JoinClass = () => {
     router.push(navigationRoutes.CLASSROOM);
   };
 
+  // Header Right Join Button with proper state binding
+    useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+          style={[
+            styles.joinButton,
+            !classCode && styles.disabledButton,
+          ]}
+          onPress={handleJoinClass}
+          disabled={!classCode}
+        >
+          <Text style={styles.joinButtonText}>Join</Text>
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation, classCode]);
+
+
   return (
     <SafeAreaView style={styles.container}>
       <View >
-
-
-
       {/* Announcement Box */}
       <Text style={styles.Elearning}>You are currently signed in as</Text>
       <TouchableOpacity style={styles.announcementBox}>
@@ -55,39 +73,23 @@ const JoinClass = () => {
       </Text>
 
        <TextInput
-          style={{
-            borderWidth: 2,
-            width: 315,
-            height: 58,
-            borderColor: error ? 'red' : '#1976D2',
-            borderRadius: 10,
-            marginLeft: 19,
-            marginTop: 10,
-            padding: 12,
-          }}
-          placeholder="Class code"
-          value={Classcode}
-          onChangeText={setClasscode}
+          style={{...styles.classCodeInput, borderColor: error ? "red" : "#1976D2"}}
+          placeholder="Enter Class Code"
+          value={classCode}
+          onChangeText={setClassCode}
           keyboardType="default"
         />
 
-        {error && <Text style={{ color: 'red', marginLeft: 20, fontSize: 12, marginTop: 8 }}>{error}</Text>}
+        {error && <Text style={styles.error}>{error}</Text>}
 
-        <Text style={{padding: 20, fontWeight: 600, fontSize: 15}}>To sign in with a class code</Text>
+        <Text style={styles.disabledText}>To sign in with a class code</Text>
         <Text style={styles.bullet}>• Use an authorised account</Text>
         <Text style={styles.bullet}>• Use a class code with 6–8 letters or numbers and no spaces or symbols</Text>
-      <Text style={styles.disabledText}>Ifyou have trouble joining the class, go to</Text>
+      <Text style={styles.disabledText}>If you have trouble joining the class, go to</Text>
 
        <Text style={styles.helpLink} onPress={() => Linking.openURL('https://support.google.com/edu/classroom')}>
         Help Centre article
        </Text>
-       <TouchableOpacity
-          style={[styles.primaryButton, !Classcode && styles.disabledButton]}
-          onPress={handleJoinClass}
-          disabled={!Classcode}
-        >
-          <Text style={styles.buttonText}>Join Class</Text>
-        </TouchableOpacity>
       {/* Bottom Navigation */}
      
          </View>
