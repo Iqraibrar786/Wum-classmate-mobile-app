@@ -42,6 +42,8 @@ const Layout = () => {
         <Drawer.Screen name="settings" options={{ title: "Settings" }} />
         <Drawer.Screen name="folder" options={{ title: "Folder" }} />
         <Drawer.Screen name="help" options={{ title: "Help" }} />
+        <Drawer.Screen name="archive" options={{ title: "Archive" }} />
+        <Drawer.Screen name="createclass" options={{ title: "Create Class" }} />
 
         {/* ✅ Join Class Screen */}
         <Drawer.Screen

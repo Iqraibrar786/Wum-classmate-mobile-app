@@ -1,8 +1,8 @@
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Drawer } from 'expo-router/drawer';
-import { Ionicons } from '@expo/vector-icons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import CustomDrawerContent from '../../assets/components/CustomDrawerContent';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
+import { Ionicons } from "@expo/vector-icons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import CustomDrawerContent from "../../assets/components/CustomDrawerContent";
 
 const Layout = () => {
   return (
@@ -11,8 +11,8 @@ const Layout = () => {
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         screenOptions={({ navigation }) => ({
           headerShown: true,
-          drawerActiveBackgroundColor: 'rgb(147, 147, 215)',
-          drawerActiveTintColor: '#fff',
+          drawerActiveBackgroundColor: "rgb(147, 147, 215)",
+          drawerActiveTintColor: "#fff",
 
           // 🔹 Menu icon on header (left side)
           headerLeft: () => (
@@ -21,7 +21,7 @@ const Layout = () => {
               size={26}
               color="#000"
               style={{ marginLeft: 15 }}
-              onPress={() => navigation.toggleDrawer()}  // TO OPRN OR CLOSE THE DRAWER
+              onPress={() => navigation.toggleDrawer()} // TO OPRN OR CLOSE THE DRAWER
             />
           ),
         })}
@@ -29,19 +29,27 @@ const Layout = () => {
         <Drawer.Screen
           name="notification"
           options={{
-            headerTitle: 'My Notifications',
+            headerTitle: "My Notifications",
             drawerIcon: ({ color, size }) => (
-              <Ionicons name="notifications-outline" size={size} color={color} />
+              <Ionicons
+                name="notifications-outline"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
 
         <Drawer.Screen
-          name="offlinefiles"
+          name="offline files"
           options={{
-            headerTitle: 'Offline Files',
+            headerTitle: "Offline Files",
             drawerIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="file-download-outline" size={size} color={color} />
+              <MaterialCommunityIcons
+                name="file-download-outline"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
@@ -49,7 +57,7 @@ const Layout = () => {
         <Drawer.Screen
           name="settings"
           options={{
-            headerTitle: '',
+            headerTitle: "",
             headerShown: false,
             drawerIcon: ({ color, size }) => (
               <Ionicons name="settings-outline" size={size} color={color} />
@@ -60,7 +68,7 @@ const Layout = () => {
         <Drawer.Screen
           name="folder"
           options={{
-            title: 'Folder',
+            title: "Folder",
             drawerIcon: ({ color, size }) => (
               <Ionicons name="folder-outline" size={size} color={color} />
             ),
@@ -70,7 +78,7 @@ const Layout = () => {
         <Drawer.Screen
           name="help"
           options={{
-            title: 'Help',
+            title: "Help",
             drawerIcon: ({ color, size }) => (
               <Ionicons name="help-circle-outline" size={size} color={color} />
             ),
@@ -78,19 +86,19 @@ const Layout = () => {
         />
       </Drawer>
 
-       <Drawer.Screen
-         name="joinclass"
-         options={{
-            headerRight: () => (
-      <Ionicons
-        name="refresh"
-        size={22}
-        style={{ marginRight: 15 }}
-        onPress={() => console.log('Refresh')}
+      <Drawer.Screen
+        name="join class"
+        options={{
+          headerRight: () => (
+            <Ionicons
+              name="refresh"
+              size={22}
+              style={{ marginRight: 15 }}
+              onPress={() => console.log("Refresh")}
+            />
+          ),
+        }}
       />
-    ),
-  }}
-  />
     </GestureHandlerRootView>
   );
 };

@@ -15,10 +15,6 @@ export const validation = {
   isEmpty: (value) => {
     return !value || value.trim() === '';
   },
-
-  isValidPhoneNumber: (phone) => {
-    return phone && phone.length >= 10;
-  },
 };
 
 export const getErrorMessage = (field, type) => {
@@ -34,10 +30,6 @@ export const getErrorMessage = (field, type) => {
     classCode: {
       empty: 'Class code is required',
       invalid: 'Class code must be 6-8 alphanumeric characters',
-    },
-    phone: {
-      empty: 'Phone number is required',
-      invalid: 'Please enter a valid phone number',
     },
   };
 

@@ -5,8 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-// import Foundation from "@expo/vector-icons/Foundation";
-// import Entypo from "react-native-vector-icons/Entypo";
+
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../constants/navigation";
 const JoinCreate = () => {

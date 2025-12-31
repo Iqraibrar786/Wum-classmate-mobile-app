@@ -1,18 +1,24 @@
 import React, { useLayoutEffect } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import {View,Text,TextInput,SafeAreaView,TouchableOpacity} from "react-native";
 import styles from "../../styles/global";
 import { useRouter, useNavigation } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
+import { useLocalSearchParams, Stack } from 'expo-router';
+import { useEffect, useState } from 'react';
 
 const CreateClass = () => {
   const router = useRouter();
   const navigation = useNavigation();
+
+// Get mode and classData from params
+  const { mode, classData } = useLocalSearchParams();
+  const isEdit = mode === 'edit';
+
+  const parsedClass = classData ? JSON.parse(classData) : {};
+
+  const [title, setTitle] = useState(parsedClass?.title || '');
+  const [description, setDescription] = useState(parsedClass?.description || '');
+
 
   const handleCreateClass = () => {
     // later you can add validation / API here
@@ -27,14 +33,22 @@ const CreateClass = () => {
           style={styles.joinButton}   // reuse same style as Join
           onPress={handleCreateClass}
         >
-          <Text style={styles.joinButtonText}>Create</Text>
+          <Text style={styles.joinButtonText}>{isEdit? 'Save' : 'Create'}</Text>
         </TouchableOpacity>
       ),
     });
-  }, [navigation]);
+  }, [navigation, isEdit]);
 
-  return (
-    <SafeAreaView style={styles.Container}>
+   return (
+    <>
+      {/* ✅ AUTO HEADER CHANGE */}
+      <Stack.Screen
+        options={{
+          title: isEdit ? 'Edit Class' : 'Create Class',
+        }}
+      />
+
+     <SafeAreaView style={styles.Container}>
       <View style={styles.primaryContainer}>
 
         {/* Input Fields */}
@@ -47,6 +61,8 @@ const CreateClass = () => {
         <TextInput style={styles.textInput} placeholder="Subject" />
       </View>
     </SafeAreaView>
+
+    </>
   );
 };
 
