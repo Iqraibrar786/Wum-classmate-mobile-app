@@ -16,28 +16,38 @@ const CreateClass = () => {
 
   const parsedClass = classData ? JSON.parse(classData) : {};
 
+// STATE FOR INPUTS
   const [title, setTitle] = useState(parsedClass?.title || '');
-  const [description, setDescription] = useState(parsedClass?.description || '');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+   // Enable/disable button based on title
+  useEffect(() => {
+    setIsButtonDisabled(title.trim() === '');
+  }, [title]);
 
+// HANDLE CREATE OR EDIT CLASS
   const handleCreateClass = () => {
-    // later you can add validation / API here
+    if (!title.trim()) return;
     router.push(navigationRoutes.CLASSROOM);
   };
 
-  // ✅ Header Right Create Button
+  // ✅ Header Right button conditionally show only if title is not empty
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () => (
+      headerRight: () =>   (
         <TouchableOpacity
-          style={styles.joinButton}   // reuse same style as Join
+          style={[
+            styles.joinButton,
+            {opacity: isButtonDisabled ? 0.5 : 1} //dim if disabled
+          ]}   
           onPress={handleCreateClass}
+          disabled={isButtonDisabled}
         >
           <Text style={styles.joinButtonText}>{isEdit? 'Save' : 'Create'}</Text>
         </TouchableOpacity>
       ),
     });
-  }, [navigation, isEdit]);
+  }, [navigation, isEdit, isButtonDisabled]);
 
    return (
     <>
@@ -55,6 +65,8 @@ const CreateClass = () => {
         <TextInput
           style={styles.textInput}
           placeholder="Class name (required)"
+          value={title}
+          onChangeText={setTitle}
         />
         <TextInput style={styles.textInput} placeholder="Section" />
         <TextInput style={styles.textInput} placeholder="Room" />
