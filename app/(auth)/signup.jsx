@@ -16,8 +16,8 @@ const SignUp = () => {
       function gotologin(){
         router.push(navigationRoutes.LOGIN);
       }
-      function gotoclassroom(){
-        router.push(navigationRoutes.CLASSROOM);
+      function gotohome(){
+        router.push(navigationRoutes.HOME);
       }
    const [name, setName] = useState("");
    const [password, setPassword] = useState("");
@@ -105,7 +105,7 @@ const SignUp = () => {
       </View>
       
       <TouchableOpacity style={styles.primaryButton}
-      onPress={gotoclassroom}>
+      onPress={gotohome}>
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
       

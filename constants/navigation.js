@@ -11,6 +11,7 @@ export const navigationRoutes = {
   VERIFIED: '/verified',
 
   // Main routes
+  HOME: '/home',
   CLASSROOM: '/classroom',
   CREATECLASS: '/createclass',
   JOINCLASS: '/joinclass',
@@ -42,6 +43,7 @@ export const navigationRoutes = {
 export const useNavigation = (router) => {
   return {
     goToLogin: () => router.push(navigationRoutes.LOGIN),
+    goToHome: () => router.push(navigationRoutes.HOME),
     goToSignup: () => router.push(navigationRoutes.SIGNUP),
     goToClassroom: () => router.push(navigationRoutes.CLASSROOM),
     goToEditProfile: () => router.push(navigationRoutes.EDITPROFILE),

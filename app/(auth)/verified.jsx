@@ -8,8 +8,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 const verifiedscreen =()=>{
 
     const router=useRouter();
-                       function classroom(){
-                         router.push(navigationRoutes.CLASSROOM);
+                       function home(){
+                         router.push(navigationRoutes.HOME);
                        }
      
     return (
@@ -21,7 +21,7 @@ const verifiedscreen =()=>{
 
    
      <TouchableOpacity style={styles.primaryButton}
-     onPress={classroom}>
+     onPress={home}>
               <Text style={styles.buttonText}>Done</Text>
             </TouchableOpacity>
       </SafeAreaView>
