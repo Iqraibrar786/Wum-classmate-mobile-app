@@ -764,7 +764,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.google,
     paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingVertical: 12,
     borderRadius: 20,
     marginRight: 8,
   },
@@ -779,7 +779,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   optionText: {
-    color: colors.textMuted,
+    color: colors.facebook,
     marginLeft: 10,
     fontSize: 16,
   },
@@ -885,8 +885,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   joinButton: {
-    height: 45,
-    width: 70,
+    height: 50,
+    width: 80,
     marginRight: 15,
     padding: 5,
     backgroundColor: colors.primaryLight,

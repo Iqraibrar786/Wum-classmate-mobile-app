@@ -50,6 +50,11 @@ const Layout = () => {
           name="joinclass"
           options={{ title: "Join Class" }}
         />
+
+         <Drawer.Screen
+          name="reusepost"
+          options={{title: "Reuse Posts: select course"}}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );

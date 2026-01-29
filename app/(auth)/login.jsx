@@ -54,7 +54,6 @@ const Login = () => {
 
   const handleLogin = () => {
     if (!validateForm()) {
-      Alert.alert('Validation Error', 'Please fix the errors before');
       return;
     }
 

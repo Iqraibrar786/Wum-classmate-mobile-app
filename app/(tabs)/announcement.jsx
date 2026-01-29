@@ -8,8 +8,19 @@ import Entypo from "react-native-vector-icons/Entypo";
 import Foundation from "@expo/vector-icons/Foundation";
 import { TextInput } from "react-native";
 const Img = require("../../assets/images/img3.jpeg");
+import { useRouter } from "expo-router";
+import { navigationRoutes } from "../../constants/navigation";
+import reusepost from "../(drawer)/reusepost";
 
 const announcement = () => {
+  const router=useRouter();
+                         function postscreen(){
+                           router.push(navigationRoutes.POSTSCREEN);
+                         }
+
+                         function reusepost(){
+                           router.push(navigationRoutes.REUSEPOST);
+                         }
   return (
     // First card
     <SafeAreaView style={styles.primaryContainer}>
@@ -32,14 +43,16 @@ const announcement = () => {
         </LinearGradient>
 
         <View style={styles.responciveContainer}>
-          <TouchableOpacity style={styles.announcementBotton}>
+          <TouchableOpacity style={styles.announcementBotton}
+          onPress={postscreen}>
             <Text style={styles.announcementBottonText}>
               <FontAwesome name="pencil" size={16} color="black" /> New
               announcement
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.repostBotton}>
+          <TouchableOpacity style={styles.repostBotton} 
+          onPress={reusepost}>
             <Text style={styles.repostBottonText}>
               <Entypo name="retweet" size={17} color="black" /> Repost
             </Text>

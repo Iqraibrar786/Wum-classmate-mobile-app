@@ -1,77 +1,81 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-  TextInput,
-} from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import AntDesign from "@expo/vector-icons/AntDesign";
-
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import React, { useCallback, useRef } from 'react';
 import styles from "../styles/global";
-const MaterialUploadScreen = () => {
-  const [text, setText] = useState("");
-  const handleAddUser = () => {
-    // Handle the add user action here
-    console.log("Add user:", text);
-  };
+import { View, Text,TouchableOpacity } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Foundation from "@expo/vector-icons/Foundation";
+import Entypo from "react-native-vector-icons/Entypo";
+import { useRouter } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
+const BottomSheetAttachments = () => {
+  const router=useRouter();
+                           function assignquiz(){
+                             router.push(navigationRoutes.ASSIGNQUIZ);
+                           }
+                           function postscreen(){
+                             router.push(navigationRoutes.POSTSCREEN);
+                           }
+                           function topiccreate(){
+                             router.push(navigationRoutes.TOPICCREATE);
+                           }
+  // ref
+  const bottomSheetRef = useRef(null);
+
+  // callbacks
+  const handleSheetChanges = useCallback((index) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  // renders
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.primaryContainer}>
-       
-        <Text style={styles.name}>Lec-1 DEMO Class room</Text>
+    <GestureHandlerRootView style={styles.bottomSheetcontainer}>
+      <BottomSheet
+        ref={bottomSheetRef}
+        onChange={handleSheetChanges}
+      >
+        <BottomSheetView style={styles.container}>
+          <Text style={styles.mainTitle}>Create</Text>
+                  <View Style={styles.listContainer}></View>
 
-        {/* Divider */}
-        <View style={styles.dividerContainer}>
-          <View style={styles.dividerLine} />
-          <View style={styles.dividerLine} />
-        </View>
-
-        <Text>This is my test content</Text>
-        <Text style={{ fontWeight: 600, fontSize: 15, marginLeft: 1 }}>
-          Check out please
-        </Text>
-        <Text style={{ marginTop: 22, marginBottom: 12, fontSize: 16 }}>
-          Attachments
-        </Text>
-
-        <View style={styles.attachmentContainer}>
-          <View style={styles.attachmentCard}></View>
-          <TouchableOpacity style={styles.caption}>
-            <Ionicons name="document-attach-sharp" size={20} color="red" /> */
-            <Text>Class room app demo UI </Text>
+           <TouchableOpacity style={styles.bottomsheetList}
+           onPress={assignquiz}>
+            <MaterialIcons name="assignment" size={24} color="black" />
+            <Text style={styles.profileIconText}>Assigment</Text>
           </TouchableOpacity>
 
-          <View style={styles.attachmentCard}></View>
-          <TouchableOpacity style={styles.caption}>
-            <MaterialCommunityIcons
-              name="attachment"
-              size={20}
-              color="#01579b"
-            />
-            <Text>My mind is the extension...</Text>
+          <TouchableOpacity style={styles.bottomsheetList}
+          onPress={assignquiz}>
+            <MaterialIcons name="assignment" size={24} color="black" />
+            <Text style={styles.profileIconText}>Quiz</Text>
           </TouchableOpacity>
-        </View>
 
-        {/* Comment section */}
-        <Text style={styles.profileLabel}>Class comments</Text>
-        <View style={styles.userbtnContainer}>
-          <TextInput
-            style={styles.textInputBtn}
-            onChangeText={setText}
-            value={text}
-            placeholder="Comments"
-            placeholderTextColor="#888"
-          />
-          <TouchableOpacity onPress={handleAddUser}>
-            <Ionicons name="send-outline" size={24} color="#888" />
+          <TouchableOpacity style={styles.bottomsheetList}
+          onPress={assignquiz}>
+           <MaterialIcons name="question-mark" size={24} color="black" />
+            <Text style={styles.profileIconText}>Question</Text>
           </TouchableOpacity>
-        </View>
-      </View>
-    </SafeAreaView>
+
+           <TouchableOpacity style={styles.profileList}
+           onPress={postscreen}>
+           <Foundation name="book-bookmark" size={24} color="#black" />
+            <Text style={styles.profileIconText}>Material</Text>
+          </TouchableOpacity>
+
+           <TouchableOpacity style={styles.bottomsheetList}>
+            <Entypo name="retweet" size={24} color="black"/>
+            <Text style={styles.profileIconText}>Reuse Post</Text>
+          </TouchableOpacity>
+
+           <TouchableOpacity style={styles.bottomsheetList}
+            onPress={topiccreate}>
+            <MaterialIcons name="topic" size={24} color="black"/>
+            <Text style={styles.profileIconText}>Topic</Text>
+          </TouchableOpacity>
+        </BottomSheetView>
+      </BottomSheet>
+    </GestureHandlerRootView>
   );
 };
-export default MaterialUploadScreen;
+
+export default BottomSheetAttachments;

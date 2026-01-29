@@ -1,12 +1,12 @@
 import React from "react";
 import { View,Image, Text, TouchableOpacity, SafeAreaView } from "react-native";
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from 
+'@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
-
 // Local file you uploaded (developer-provided path)
 const AVATAR_URI =
   "file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
@@ -20,10 +20,11 @@ export default function ProfileScreen() {
     function onChangePassword() {
     router.push(navigationRoutes.CHANGEPASSWORD);
   }
-    function onLogout() {
+    function onSignup() {
     // add logout logic (clear tokens, navigate to auth)
-    router.push(navigationRoutes.LOGIN);
+    router.push(navigationRoutes.SIGNUP);
   }
+  
   return (
     <SafeAreaView style={styles.Container}>
       <View >
@@ -73,7 +74,7 @@ export default function ProfileScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.logoutBtn}
-         onPress={onLogout}>
+         onPress={onSignup}>
           <Text style={styles.logoutText}>Logout ⎋</Text>
         </TouchableOpacity>
         

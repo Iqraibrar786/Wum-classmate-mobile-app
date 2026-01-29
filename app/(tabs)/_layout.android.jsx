@@ -43,7 +43,7 @@ const Page = () => {
                     ios: <Icon sf="gear"/>,
                     android: <Icon src={<VectorIcon family={MaterialCommunityIcons} name="face-man-profile" />} />,
                 })}
-            </NativeTabs.Trigger> 
+            </NativeTabs.Trigger>  
         </NativeTabs>
     )
 };

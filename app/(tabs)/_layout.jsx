@@ -41,6 +41,15 @@ const TabsLayout = () => {
           android: <Icon src={<VectorIcon family={MaterialCommunityIcons} name="face-man-profile" />} />,
         })}
       </NativeTabs.Trigger>
+
+       {/* Reuse Posts  */}
+      <NativeTabs.Trigger name="reusepost">
+        <Label>Reuse Posts</Label>
+        {Platform.select({
+          ios: <Icon sf="gear" />,
+          android: <Icon src={<VectorIcon family={MaterialCommunityIcons} name="face-man-profile" />} />,
+        })}
+      </NativeTabs.Trigger>
     </NativeTabs>
   );
 };

@@ -72,6 +72,7 @@ const CreateBottomSheet = () => {
             <MaterialIcons name="topic" size={24} color="black"/>
             <Text style={styles.profileIconText}>Topic</Text>
           </TouchableOpacity>
+          
         </BottomSheetView>
       </BottomSheet>
     </GestureHandlerRootView>

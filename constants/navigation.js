@@ -1,3 +1,5 @@
+import AttachfileBottomSheet from "../app/attachfile";
+
 export const navigationRoutes = {
   // Auth routes
   SPLASH: '/splash',
@@ -38,6 +40,8 @@ export const navigationRoutes = {
   POSTSCREEN: '/postscreen',
   TOPICCREATE: '/topiccreate',
   ATTACHMENTS: '/attachments',
+  ATTACHFILEBOTTOMSHEET: '/attachfile',
+  REUSEPOST: '/reusepost',
 };
 
 export const useNavigation = (router) => {
@@ -48,9 +52,12 @@ export const useNavigation = (router) => {
     goToClassroom: () => router.push(navigationRoutes.CLASSROOM),
     goToEditProfile: () => router.push(navigationRoutes.EDITPROFILE),
     goToAnnouncement: () => router.push(navigationRoutes.ANNOUNCEMENT),
+    goToAttachments: () => router.push(navigationRoutes.ATTACHMENTS),
     goToOTP: () => router.push(navigationRoutes.OTP),
     goToVerified: () => router.push(navigationRoutes.VERIFIED),
     goToForgotPass: () => router.push(navigationRoutes.FORGOTPASS),
     goToResetPass: () => router.push(navigationRoutes.RESETPASS),
+    goToAttachfileBottomSheet: () => router.push(navigationRoutes.ATTACHFILEBOTTOMSHEET),
+    goToReusePost: () => router.push(navigationRoutes.REUSEPOST),
   };
 };
