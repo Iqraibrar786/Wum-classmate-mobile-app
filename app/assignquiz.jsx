@@ -3,9 +3,9 @@ import {
   View,
   Text,
   TouchableOpacity,
-  SafeAreaView,
   TextInput,
 } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome";
@@ -16,7 +16,7 @@ const MaterialUploadScreen = () => {
   const [Classcode, setClasscode] = useState("");
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <View style={styles.primaryContainer}>
        
         <Text style={styles.name}>Assignment title (Required)</Text>
@@ -80,7 +80,7 @@ const MaterialUploadScreen = () => {
           <Text style={styles.optionText}>Add topic</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

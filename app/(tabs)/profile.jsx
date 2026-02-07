@@ -1,5 +1,5 @@
 import React from "react";
-import { View,Image, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View,Image, Text, TouchableOpacity} from "react-native";
 import MaterialIcons from 
 '@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -7,6 +7,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 // Local file you uploaded (developer-provided path)
 const AVATAR_URI =
   "file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
@@ -26,7 +27,7 @@ export default function ProfileScreen() {
   }
   
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <View >
 
         {/* Profile Image and Name */}
@@ -80,6 +81,6 @@ export default function ProfileScreen() {
         
       </View>
         </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }

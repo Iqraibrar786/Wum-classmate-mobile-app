@@ -7,7 +7,7 @@ import {
   View,
   TextInput,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider} from "react-native-safe-area-context";
 import styles from "../styles/global";
 
 const TopicAdd = () => {
@@ -15,7 +15,7 @@ const TopicAdd = () => {
   const [Classcode, setClasscode] = useState("");
   
   return (
-    <SafeAreaView style={styles.centeredView}>
+    <SafeAreaProvider style={styles.centeredView}>
 
       {/* Modal Content */}
       <Modal
@@ -77,7 +77,7 @@ const TopicAdd = () => {
           </View>
         </View>
       </Modal>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
-import {View,Text,TextInput,SafeAreaView,TouchableOpacity} from "react-native";
+import {View,Text,TextInput,TouchableOpacity} from "react-native";
 import styles from "../../styles/global";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useRouter, useNavigation } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
 import { useLocalSearchParams, Stack } from 'expo-router';
@@ -58,7 +59,7 @@ const CreateClass = () => {
         }}
       />
 
-     <SafeAreaView style={styles.Container}>
+     <SafeAreaProvider style={styles.Container}>
       <View style={styles.primaryContainer}>
 
         {/* Input Fields */}
@@ -72,7 +73,7 @@ const CreateClass = () => {
         <TextInput style={styles.textInput} placeholder="Room" />
         <TextInput style={styles.textInput} placeholder="Subject" />
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
 
     </>
   );

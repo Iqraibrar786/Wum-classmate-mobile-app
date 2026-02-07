@@ -38,9 +38,11 @@ const CardInfo = ({ classData }) => {
   };
 
   // HANDLE SHEET CHANGES
-  const handleSheetChanges = useCallback((index) => {
-    console.log("handleSheetChanges", index);
-  }, []);
+  const handleSheetChanges = (index) => {
+    if (index === -1) {
+      console.log("Bottom sheet closed");
+    }
+  };
 
   return (
     <GestureHandlerRootView style={styles.bottomSheetcontainer}>

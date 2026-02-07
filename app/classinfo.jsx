@@ -3,9 +3,9 @@ import {
   View,
   Text,
   TouchableOpacity,
-  SafeAreaView,
   Image,
 } from "react-native";
+import { SafeAreaProvider} from "react-native-safe-area-context";
 import styles from "../styles/global";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../constants/navigation";
@@ -27,7 +27,7 @@ export default function ClassInfo() {
   }
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       {/* Header */}
       <View style={styles.header}>
         <LinearGradient
@@ -74,6 +74,6 @@ export default function ClassInfo() {
         Use the stream to share announcements, post assignments and respond to
         questions
       </Text>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }

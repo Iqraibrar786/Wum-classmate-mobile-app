@@ -9,7 +9,7 @@ import styles from "../../styles/global";
 import { useFonts } from 'expo-font';
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 const Img = require("../../assets/images/class2img.jpg");
 
 const Onboarding2=()=> {
@@ -31,7 +31,7 @@ const Onboarding2=()=> {
   }
   return (
 
-      <SafeAreaView style={styles.Container}>
+      <SafeAreaProvider style={styles.Container}>
           <Image source={Img} style={styles.image} />
           <Text style={styles.Elearning}> E-Learning</Text>
           <Text style={styles.mainTitle}>Your great future</Text>
@@ -51,7 +51,7 @@ const Onboarding2=()=> {
             <Text style={styles.signUpButtonText}>Sign-up</Text>
           </TouchableOpacity>
           </View>
-      </SafeAreaView>
+      </SafeAreaProvider>
   );
 }
 export default Onboarding2;

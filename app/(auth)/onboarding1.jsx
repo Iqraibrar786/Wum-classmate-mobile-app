@@ -4,7 +4,7 @@ import styles from "../../styles/global";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 const Img = require("../../assets/images/class5img.jpg");
 
 const Onboarding1 = () => {
@@ -26,7 +26,7 @@ const Onboarding1 = () => {
     return null;
   }
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
         {/* Image */}
         <Image source={Img} style={styles.image} />
         <Text style={styles.mainTitle}>
@@ -46,7 +46,7 @@ const Onboarding1 = () => {
          onPress={gotosplash}>
           <Text style={styles.transparentButtonText}>skip</Text>
         </TouchableOpacity>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 export default Onboarding1;

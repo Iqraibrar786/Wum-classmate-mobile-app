@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity} from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import styles from "../../styles/global";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
@@ -38,7 +39,7 @@ const Otp = () => {
   };
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <StatusBar barStyle="dark-content" />
       <Text style={styles.sideTitle}>OTP Verification!</Text>
 
@@ -86,7 +87,7 @@ const Otp = () => {
       onPress={verified}>
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

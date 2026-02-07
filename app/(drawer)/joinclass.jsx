@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Alert, Linking } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity,Alert, Linking } from 'react-native';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useRouter, useNavigation } from "expo-router";
 import styles from "../../styles/global";
@@ -50,7 +51,7 @@ const JoinClass = () => {
 
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider style={styles.container}>
       <View >
       {/* Announcement Box */}
       <Text style={styles.Elearning}>You are currently signed in as</Text>
@@ -93,7 +94,7 @@ const JoinClass = () => {
       {/* Bottom Navigation */}
      
          </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

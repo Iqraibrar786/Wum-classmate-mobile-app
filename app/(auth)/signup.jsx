@@ -5,7 +5,7 @@ import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
 import { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -39,7 +39,7 @@ const SignUp = () => {
      }
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <Text style={styles.Elearning}>SignUp!</Text>
       <Text style={styles.mainTitle}>Create account</Text>
       
@@ -116,7 +116,7 @@ const SignUp = () => {
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>           
+    </SafeAreaProvider>           
   );
 }
 

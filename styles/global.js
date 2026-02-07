@@ -914,5 +914,18 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 8,
   },
+  alertContainer: {
+    flexDirection: "row",
+    backgroundColor: colors.info,
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 40,
+  },
+  alertText: {
+    color: colors.secondary,    
+    fontSize: 14,
+    flex: 1,
+  }
 });
 export default styles;

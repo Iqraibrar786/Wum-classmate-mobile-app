@@ -3,10 +3,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
 } from "react-native";
+import { SafeAreaProvider} from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -98,7 +98,7 @@ const BackendCard = () => {
     <View style={{ flex: 1 }}>
       {/* Scrollable Content */}
       <ScrollView style={{ flex: 1 }}>
-        <SafeAreaView style={styles.container}>
+        <SafeAreaProvider style={styles.container}>
           <View style={styles.primaryContainer}>
             {/* Render cards using map */}
             {cardsData.map((card) => (
@@ -125,7 +125,7 @@ const BackendCard = () => {
               </TouchableOpacity>
             ))}
           </View>
-        </SafeAreaView>
+        </SafeAreaProvider>
       </ScrollView>
 
       {/* Static Add Button */}

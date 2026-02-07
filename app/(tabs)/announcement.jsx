@@ -1,5 +1,6 @@
 import React from "react";
-import { View,Image,Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View,Image,Text, TouchableOpacity} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -23,7 +24,7 @@ const announcement = () => {
                          }
   return (
     // First card
-    <SafeAreaView style={styles.primaryContainer}>
+    <SafeAreaProvider style={styles.primaryContainer}>
       <View >
 
         {/* Card */}
@@ -83,7 +84,7 @@ const announcement = () => {
            placeholderTextColor="#ccc"
            style={styles.commentInput}/>
         </View>
-      </View>
+     
       {/* Image */}
       <View style={styles.secondImg}>
         <Image source={Img} style={styles.image} />
@@ -102,7 +103,8 @@ const announcement = () => {
         Use the stream to share announcements, post assignments and respond to
         questions
       </Text>
-    </SafeAreaView>
+       </View>
+    </SafeAreaProvider>
   );
 };
 export default announcement;

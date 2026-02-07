@@ -5,8 +5,8 @@ import {
   TextInput,
   Image,
   TouchableOpacity,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import styles from "../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -25,7 +25,7 @@ const InviteScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <View >
 
         {/* Teachers Section */}
@@ -83,7 +83,7 @@ const InviteScreen = () => {
           <Text style={styles.buttonText}>Invite</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 export default InviteScreen;

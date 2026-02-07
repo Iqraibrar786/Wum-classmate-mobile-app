@@ -5,7 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../constants/navigation";
 const JoinCreate = () => {
@@ -21,12 +21,15 @@ const JoinCreate = () => {
   const bottomSheetRef = useRef(null);
 
   // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log('handleSheetChanges', index);
-  }, []);
+  const handleSheetChanges = (index) => {
+    if (index === -1) {
+      console.log("Bottom sheet closed");
+    }
+  };
 
   // renders
   return (
+    <SafeAreaProvider>
     <GestureHandlerRootView style={styles.bottomSheetcontainer}>
       <BottomSheet
         ref={bottomSheetRef}
@@ -47,6 +50,7 @@ const JoinCreate = () => {
         </BottomSheetView>
       </BottomSheet>
     </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
 };
 

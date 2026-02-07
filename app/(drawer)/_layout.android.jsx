@@ -16,6 +16,15 @@ const Layout = () => {
         }}
       >
         <Drawer.Screen
+          name="home"
+          options={{
+            title: "Home",
+            drawerIcon: ({ size, color }) => (
+              <Ionicons name="home-outline" size={size} color={color} />
+            ),
+          }}
+        />
+        <Drawer.Screen
           name="notification"
           options={{
             title: "Notification",
@@ -44,17 +53,8 @@ const Layout = () => {
         <Drawer.Screen name="help" options={{ title: "Help" }} />
         <Drawer.Screen name="archive" options={{ title: "Archive" }} />
         <Drawer.Screen name="createclass" options={{ title: "Create Class" }} />
-
-        {/* ✅ Join Class Screen */}
-        <Drawer.Screen
-          name="joinclass"
-          options={{ title: "Join Class" }}
-        />
-
-         <Drawer.Screen
-          name="reusepost"
-          options={{title: "Reuse Posts: select course"}}
-        />
+        <Drawer.Screen name="joinclass" options={{ title: "Join Class" }}/>
+        <Drawer.Screen name="reusepost" options={{title: "Reuse Posts: select course"}}/>
       </Drawer>
     </GestureHandlerRootView>
   );

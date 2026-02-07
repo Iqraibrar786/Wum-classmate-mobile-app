@@ -1,5 +1,6 @@
 import React,{useState} from "react";
-import { View, Text, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styles from "../styles/global";
@@ -12,7 +13,7 @@ const EdirProfileScreen=()=> {
     }
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <View>
 
 
@@ -55,7 +56,7 @@ const EdirProfileScreen=()=> {
           </TouchableOpacity>
           </View>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 export default EdirProfileScreen;

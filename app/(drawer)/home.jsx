@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView,Image } from 'react-native';
+import { View, Text, TouchableOpacity,Image } from 'react-native';
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
 import { navigationRoutes } from "../../constants/navigation";
 const Img = require("../../assets/images/class1img.jpg");
@@ -19,7 +20,7 @@ const Home = () => {
                        router.push(navigationRoutes.JOINCREATE);
                      }
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <Text style={styles.helpText}>Don't see your classes?{"\n"}Try another account</Text>
               
        <View style={styles.image}>
@@ -38,7 +39,7 @@ const Home = () => {
       <TouchableOpacity style={styles.addButton}onPress={JoinCreate}>
         <MaterialIcons name="add" size={28} color="#dea019" />
       </TouchableOpacity>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

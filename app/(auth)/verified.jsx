@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
-import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, TouchableOpacity} from 'react-native';
+import { SafeAreaProvider} from 'react-native-safe-area-context';
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const verifiedscreen =()=>{
@@ -13,7 +14,7 @@ const verifiedscreen =()=>{
                        }
      
     return (
-        <SafeAreaView style={styles.Container}>
+        <SafeAreaProvider style={styles.Container}>
 
         <Text style={styles.mainTitle}>Verified!</Text>
         <Text style={styles.subTitle}>Your account has been varified successfully.</Text>
@@ -24,7 +25,7 @@ const verifiedscreen =()=>{
      onPress={home}>
               <Text style={styles.buttonText}>Done</Text>
             </TouchableOpacity>
-      </SafeAreaView>
+      </SafeAreaProvider>
     );
 }
 export default verifiedscreen;

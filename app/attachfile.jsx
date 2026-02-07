@@ -10,7 +10,6 @@ import Entypo from "react-native-vector-icons/Entypo";
 import Octicons from "@expo/vector-icons/Octicons";
 // import Feather from '@expo/vector-icons/Feather';
 import { useRouter } from "expo-router";
-import { navigationRoutes } from "../constants/navigation";
 const AttachfileBottomSheet = () => {
   //   const router=useRouter();
   //                            function assignquiz(){
@@ -26,9 +25,11 @@ const AttachfileBottomSheet = () => {
   const bottomSheetRef = useRef(null);
 
   // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log("handleSheetChanges", index);
-  }, []);
+  const handleSheetChanges = (index) => {
+    if (index === -1) {
+      console.log("Bottom sheet closed");
+    }
+  };
 
   // renders
   return (

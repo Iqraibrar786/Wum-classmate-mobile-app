@@ -23,9 +23,11 @@ const CreateBottomSheet = () => {
   const bottomSheetRef = useRef(null);
 
   // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log('handleSheetChanges', index);
-  }, []);
+  const handleSheetChanges = (index) => {
+    if (index === -1) {
+      console.log("Bottom sheet closed");
+    }
+  };
 
   // renders
   return (

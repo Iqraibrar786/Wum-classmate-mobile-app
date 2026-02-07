@@ -5,7 +5,7 @@ import styles from "../../styles/global";
 import CheckBox from "expo-checkbox";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
@@ -70,7 +70,7 @@ const Login = () => {
   }
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <Image source={Img} style={styles.image} />
       <Text style={styles.Elearning}>
         Log in to continue your learning journey
@@ -177,7 +177,7 @@ const Login = () => {
           <Text style={styles.link}>Sign Up</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

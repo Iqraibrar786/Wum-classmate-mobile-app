@@ -3,45 +3,69 @@ import {
   View,
   Text,
   TouchableOpacity,
-  SafeAreaView,
   TextInput,
-  Alert,
 } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter, useNavigation } from "expo-router";
+
 import styles from "../../styles/global";
 import { navigationRoutes } from "../../constants/navigation";
-import announcement from "../(tabs)/announcement";
+
+/** Reusable Alert Component */
+const AlertMessage = ({ message, onClose }) => (
+  <View style={styles.alertContainer}>
+    <Text style={styles.alertText}>{message}</Text>
+    <TouchableOpacity onPress={onClose}>
+      <Text style={styles.alertAction}> Add</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 const MaterialUploadScreen = () => {
+  const [description, setDescription] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+
   const router = useRouter();
   const navigation = useNavigation();
 
-  function announcement() {
-    router.push(navigationRoutes.ANNOUNCEMENT);
-  }
+  /** Navigation handler */
+  const handleNavigation = useCallback(
+    (route) => {
+      router.push(route);
+    },
+    [router]
+  );
 
-   function attachfile() {
-    router.push(navigationRoutes.ATTACHFILEBOTTOMSHEET);
-  }
-
-  const [description, setDescription] = useState("");
+  /** Create announcement handler */
+  const handleCreate = useCallback(() => {
+    if (!description.trim()) {
+      setShowAlert(true);
+      return;
+    }
+    setShowAlert(false);
+    console.log("Announcement created:", description);
+    handleNavigation(navigationRoutes.ANNOUNCEMENT);
+  }, [description, handleNavigation]);
 
   /** Header button */
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity style={styles.joinButton} onPress={announcement}>
+        <TouchableOpacity
+          style={styles.joinButton}
+          onPress={handleCreate}
+        >
           <Text style={styles.joinButtonText}>Create</Text>
         </TouchableOpacity>
       ),
     });
-  }, [navigation, announcement]);
+  }, [navigation, handleCreate]);
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaProvider style={styles.Container}>
       <View style={styles.primaryContainer}>
         {/* Audience chips */}
         <View style={styles.chipsRow}>
@@ -50,7 +74,6 @@ const MaterialUploadScreen = () => {
             <Ionicons name="person" size={16} color="#fff" />
             <Text style={styles.chipText}>WUM MAD</Text>
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.chip}>
             <Text style={styles.chipText}>All students</Text>
           </TouchableOpacity>
@@ -62,23 +85,36 @@ const MaterialUploadScreen = () => {
           <View style={styles.dividerLine} />
         </View>
 
-        {/* Description */}
-
+        {/* Description input */}
         <TextInput
           style={styles.input}
           placeholder="Announce something to your class..."
           value={description}
-          onChangeText={setDescription}
+          onChangeText={(text) => {
+            setDescription(text);
+            if (text.trim()) setShowAlert(false);
+          }}
           multiline
         />
 
-        {/* Attachment */}
-        <TouchableOpacity style={styles.optionRow} onPress={attachfile}>
+        {/* Attachment button */}
+        <TouchableOpacity
+          style={styles.optionRow}
+          onPress={() => handleNavigation(navigationRoutes.ATTACHFILEBOTTOMSHEET)}
+        >
           <MaterialIcons name="attach-file" size={20} color="#01579b" />
           <Text style={styles.optionText}>Add attachment</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+
+      {/* Alert */}
+      {showAlert && (
+        <AlertMessage
+          message="Missing message"
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+    </SafeAreaProvider>
   );
 };
 

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from "../../styles/global";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { SafeAreaProvider} from 'react-native-safe-area-context';
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const resetpass =()=>{
@@ -20,7 +21,7 @@ const resetpass =()=>{
 
 
     return (
-        <SafeAreaView style={styles.Container}>
+        <SafeAreaProvider style={styles.Container}>
 
         <Text style={styles.sideTitle}>Reset Password</Text>
         <Text style={styles.sideDescription}>Please enter your new password.</Text>
@@ -71,7 +72,7 @@ const resetpass =()=>{
      onPress={verified}>
               <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
-      </SafeAreaView>
+      </SafeAreaProvider>
     );
 }
 export default resetpass;
