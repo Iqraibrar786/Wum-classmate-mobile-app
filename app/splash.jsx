@@ -25,7 +25,7 @@ const Splash=()=>{
     if (!fontsLoaded) return;
     const timer = setTimeout(() => {
       router.replace("/onboarding1");
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [fontsLoaded]);
 

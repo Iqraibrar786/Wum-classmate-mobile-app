@@ -10,7 +10,6 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter, useNavigation } from "expo-router";
-
 import styles from "../../styles/global";
 import { navigationRoutes } from "../../constants/navigation";
 
@@ -66,7 +65,7 @@ const MaterialUploadScreen = () => {
 
   return (
     <SafeAreaProvider style={styles.Container}>
-      <View style={styles.primaryContainer}>
+      <View >
         {/* Audience chips */}
         <View style={styles.chipsRow}>
           <FontAwesome5 name="users" size={22} color="#888" />

@@ -9,8 +9,7 @@ import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 // Local file you uploaded (developer-provided path)
-const AVATAR_URI =
-  "file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
+const AVATAR_URI ="file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
 
 export default function ProfileScreen() {
   const router=useRouter();
