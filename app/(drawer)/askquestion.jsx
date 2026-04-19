@@ -1,81 +1,77 @@
 import React, { useState, useLayoutEffect, useCallback } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { MaterialIcons } from "@expo/vector-icons";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { useRouter, useNavigation } from "expo-router";
 import styles from "../../styles/global";
 import { navigationRoutes } from "../../constants/navigation";
 
-/** Reusable Alert Component */
+/** Alert Component */
 const AlertMessage = ({ message, onClose }) => (
   <View style={styles.alertContainer}>
     <Text style={styles.alertText}>{message}</Text>
     <TouchableOpacity onPress={onClose}>
-      <Text style={styles.alertAction}> Add</Text>
+      <Text style={styles.alertAction}>Add</Text>
     </TouchableOpacity>
   </View>
 );
 
-const MaterialUploadScreen = () => {
+const AskQuestionScreen = () => {
   const [description, setDescription] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+
   const router = useRouter();
   const navigation = useNavigation();
 
-  /** Create announcement handler */
-  const handleNavigation = useCallback(
-    (route) => {
-      router.push(route);
-    },
-    [router]
-  );
-
-  /** Handle back navigation */
+  /** 🔙 Back */
   const handleBack = useCallback(() => {
-    router.replace(navigationRoutes.ANNOUNCEMENT);   // ✅ This goes to previous screen
+    router.replace(navigationRoutes.ASSIGNING);
   }, [router]);
 
-  /** Create announcement handler */
-  const handleCreate = useCallback(() => {
+  /** ✅ Assign */
+  const handleAssign = useCallback(() => {
     if (!description.trim()) {
       setShowAlert(true);
       return;
     }
-    setShowAlert(false);
-    console.log("Announcement created:", description);
-    handleNavigation(navigationRoutes.ANNOUNCEMENT);
-  }, [description, handleNavigation]);
 
-  /** Header buttons */
+    setShowAlert(false);
+    console.log("Question:", description);
+    router.push(navigationRoutes.ANNOUNCEMENT);
+  }, [description, router]);
+
+  /** 🧭 Header */
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
         <TouchableOpacity onPress={handleBack} style={{ marginLeft: 10 }}>
-          <Ionicons name="arrow-back" size={24} color="#000" />
+          <Ionicons name="arrow-back" size={24} />
         </TouchableOpacity>
       ),
       headerRight: () => (
-        <TouchableOpacity
-          style={styles.joinButton}
-          onPress={handleCreate}
-        >
-          <Text style={styles.joinButtonText}>Create</Text>
+        <TouchableOpacity style={styles.joinButton} onPress={handleAssign}>
+          <Text style={styles.joinButtonText}>Ask</Text>
         </TouchableOpacity>
       ),
     });
-  }, [navigation, handleCreate, handleBack]);
+  }, [navigation, handleBack, handleAssign]);
 
   return (
     <SafeAreaProvider style={styles.secondaryContainer}>
       <View>
-        {/* Audience chips */}
+
+        {/* Title */}
+        <Text style={styles.name}>Question title(Required)</Text>
+
+         {/* Divider */}
+        <View style={styles.dividerContainer}>
+          <View style={styles.dividerLine} />
+          <View style={styles.dividerLine} />
+        </View>
+
+         {/* Audience chips */}
         <View style={styles.chipsRow}>
           <FontAwesome5 name="users" size={22} color="#888" />
           <TouchableOpacity style={styles.chip}>
@@ -87,23 +83,35 @@ const MaterialUploadScreen = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Divider */}
+         {/* Divider */}
         <View style={styles.dividerContainer}>
           <View style={styles.dividerLine} />
           <View style={styles.dividerLine} />
         </View>
 
-        {/* Description input */}
+
+        {/* Input */}
         <TextInput
-          style={styles.input}
-          placeholder="Announce something to your class..."
+          style={styles.descriptionInput}
+          placeholder="Description"
           value={description}
           onChangeText={(text) => {
             setDescription(text);
             if (text.trim()) setShowAlert(false);
           }}
-          multiline
         />
+
+         {/*Question Type*/}
+        <TouchableOpacity style={styles.optionRow}>
+          <FontAwesome5 name="question-circle" size={20} color="#01579b" />
+          <Text style={styles.optionText}>Select question type</Text>
+        </TouchableOpacity>
+
+        {/* Attachment */}
+        <TouchableOpacity style={styles.optionRow}>
+          <MaterialIcons name="attach-file" size={20} color="#01579b" />
+          <Text style={styles.optionText}>Add attachment</Text>
+        </TouchableOpacity>
 
          {/* Divider */}
         <View style={styles.dividerContainer}>
@@ -111,22 +119,27 @@ const MaterialUploadScreen = () => {
           <View style={styles.dividerLine} />
         </View>
 
-        {/* Attachment button */}
-        <TouchableOpacity
-          style={styles.optionRow}
-          onPress={() =>
-            handleNavigation(navigationRoutes.ATTACHFILEBOTTOMSHEET)
-          }
-        >
-          <MaterialIcons name="attach-file" size={20} color="#01579b"/>
-          <Text style={styles.optionText}>Add attachment</Text>
+        {/* Points */}
+        <View style={styles.optionRow}>
+          <MaterialIcons name="analytics" size={24} color="#01579b" />
+          <Text style={styles.announcementBottonText}>100 points</Text>
+        </View>
+
+        {/* Due Date */}
+        <TouchableOpacity style={styles.optionRow}>
+          <Text style={styles.optionText}>Set due date</Text>
+        </TouchableOpacity>
+
+        {/* Topic */}
+        <TouchableOpacity style={styles.optionRow}>
+          <Text style={styles.optionText}>Add topic</Text>
         </TouchableOpacity>
       </View>
-
-      {/* Alert */}
+      
+         {/* 🔴 Alert */}
       {showAlert && (
         <AlertMessage
-          message="Missing message"
+          message="Missing title"
           onClose={() => setShowAlert(false)}
         />
       )}
@@ -134,4 +147,4 @@ const MaterialUploadScreen = () => {
   );
 };
 
-export default MaterialUploadScreen;
+export default AskQuestionScreen;

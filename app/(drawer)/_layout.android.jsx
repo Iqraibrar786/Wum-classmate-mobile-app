@@ -52,10 +52,13 @@ const Layout = () => {
         <Drawer.Screen name="folder" options={{ title: "Folder" }} />
         <Drawer.Screen name="help" options={{ title: "Help" }} />
         <Drawer.Screen name="archive" options={{ title: "Archive" }} />
-        <Drawer.Screen name="createclass" options={{ title: "Create Class" }} />
+        <Drawer.Screen name="createclass" options={{ title: "" }} />
+        <Drawer.Screen name="postscreen" options={{ title: "" }} />
         <Drawer.Screen name="assignquiz" options={{ title: "" }} />
-        <Drawer.Screen name="joinclass" options={{ title: "Join Class" }}/>
-        <Drawer.Screen name="reusepost" options={{title: "Reuse Posts: select course"}}/>
+        <Drawer.Screen name="askquestion" options={{ title: "" }} />
+        <Drawer.Screen name="materialupload" options={{ title: "" }} />
+        <Drawer.Screen name="joinclass" options={{ title: "" }}/>
+        <Drawer.Screen name="reusepost" options={{title: "ReusePost: select course"}}/>
       </Drawer>
     </GestureHandlerRootView>
   );

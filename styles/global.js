@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     alignSelf: "center",
-    marginVertical: 20,
+    marginVertical: 15,
   },
   dividerLine: {
     flex: 1,
@@ -764,7 +764,7 @@ const styles = StyleSheet.create({
   chipsRow: {
     flexDirection: "row",
     gap: 12,
-    marginTop: 20,
+    marginTop: 7,
   },
   chip: {
     flexDirection: "row",
@@ -922,13 +922,16 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   alertContainer: {
+    position: "absolute",
+    bottom: 50,
+    left: 20,
+    right: 20,
+    justifyContent: "space-between",
     flexDirection: "row",
     backgroundColor: colors.info,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
-    marginTop: 360,
-    marginHorizontal: 15,
   },
   alertText: {
     color: colors.secondary,

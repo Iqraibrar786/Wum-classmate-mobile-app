@@ -43,6 +43,8 @@ export const navigationRoutes = {
   ATTACHFILEBOTTOMSHEET: '/attachfile',
   REUSEPOST: '/reusepost',
   POSTSCREEN: '/postscreen',
+  ASKQUESTION: '/askquestion',
+  MATERIALUPLOAD: '/materialupload',
 };
 
 export const useNavigation = (router) => {
@@ -61,5 +63,7 @@ export const useNavigation = (router) => {
     goToAttachfileBottomSheet: () => router.push(navigationRoutes.ATTACHFILEBOTTOMSHEET),
     goToReusePost: () => router.push(navigationRoutes.REUSEPOST),
     goToPostScreen: () => router.push(navigationRoutes.POSTSCREEN),
+    goToAskQuestion: () => router.push(navigationRoutes.ASKQUESTION),
+    goToMaterialUpload: () => router.push(navigationRoutes.MATERIALUPLOAD),
   };
 };

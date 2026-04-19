@@ -4,9 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { MaterialIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-
 import { useRouter, useNavigation } from "expo-router";
-
 import styles from "../../styles/global";
 import { navigationRoutes } from "../../constants/navigation";
 
@@ -130,7 +128,8 @@ const MaterialUploadScreen = () => {
         <TouchableOpacity style={styles.optionRow}>
           <Text style={styles.optionText}>Add topic</Text>
         </TouchableOpacity>
-
+      </View>
+      
          {/* 🔴 Alert */}
       {showAlert && (
         <AlertMessage
@@ -138,8 +137,6 @@ const MaterialUploadScreen = () => {
           onClose={() => setShowAlert(false)}
         />
       )}
-
-      </View>
     </SafeAreaProvider>
   );
 };

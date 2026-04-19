@@ -9,16 +9,28 @@ import Entypo from "react-native-vector-icons/Entypo";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../constants/navigation";
 const CreateBottomSheet = () => {
-  const router=useRouter();
-                           function assignquiz(){
-                             router.push(navigationRoutes.ASSIGNQUIZ);
-                           }
-                           function postscreen(){
-                             router.push(navigationRoutes.POSTSCREEN);
-                           }
-                           function topiccreate(){
-                             router.push(navigationRoutes.TOPICCREATE);
-                           }
+  const router = useRouter();
+
+  function assignquiz() {
+    router.push(navigationRoutes.ASSIGNQUIZ);
+  }
+
+  function askquestion() {
+    router.push(navigationRoutes.ASKQUESTION);
+  }
+
+  function postscreen() {
+    router.push(navigationRoutes.MATERIALUPLOAD);
+  }
+
+  function reusepost() {
+    router.push(navigationRoutes.REUSEPOST);
+  }
+
+  function topiccreate() {
+    router.push(navigationRoutes.TOPICCREATE);
+  }
+
   // ref
   const bottomSheetRef = useRef(null);
 
@@ -53,7 +65,7 @@ const CreateBottomSheet = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.bottomsheetList}
-          onPress={assignquiz}>
+          onPress={askquestion}>
            <MaterialIcons name="question-mark" size={24} color="black" />
             <Text style={styles.profileIconText}>Question</Text>
           </TouchableOpacity>
@@ -64,7 +76,8 @@ const CreateBottomSheet = () => {
             <Text style={styles.profileIconText}>Material</Text>
           </TouchableOpacity>
 
-           <TouchableOpacity style={styles.bottomsheetList}>
+           <TouchableOpacity style={styles.bottomsheetList}
+           onPress={reusepost}>
             <Entypo name="retweet" size={24} color="black"/>
             <Text style={styles.profileIconText}>Reuse Post</Text>
           </TouchableOpacity>
