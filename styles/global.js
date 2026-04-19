@@ -23,9 +23,13 @@ const styles = StyleSheet.create({
   secondaryContainer: {
     flex: 1,
     alignItems: "center",
-    alignSelf: "center",
+    // alignSelf: "center",
     backgroundColor: colors.secondary,
-    justifyContent: "center",
+    // justifyContent: "center",
+    padding: 10,
+    // margin: 10,
+    // marginBottom: 30,
+    // marginTop: 30,
   },
   image: {
     height: 150,
@@ -650,19 +654,19 @@ const styles = StyleSheet.create({
     color: colors.secondary,
     fontWeight: "600",
   },
-  changePasswordBtn: {
-    width: 300,
-    backgroundColor: colors.text,
-    alignSelf: "center",
-    marginTop: 30,
-    paddingVertical: 12,
-    borderRadius: 30,
-    alignItems: "center",
-  },
-  changePasswordText: {
-    color: colors.secondary,
-    fontWeight: "bold",
-  },
+  // changePasswordBtn: {
+  //   width: 300,
+  //   backgroundColor: colors.text,
+  //   alignSelf: "center",
+  //   marginTop: 20,
+  //   paddingVertical: 12,
+  //   borderRadius: 30,
+  //   alignItems: "center",
+  // },
+  // changePasswordText: {
+  //   color: colors.secondary,
+  //   fontWeight: "bold",
+  // },
   logoutBtn: {
     width: 300,
     alignSelf: "center",
@@ -760,6 +764,7 @@ const styles = StyleSheet.create({
   chipsRow: {
     flexDirection: "row",
     gap: 12,
+    marginTop: 20,
   },
   chip: {
     flexDirection: "row",
@@ -887,7 +892,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   joinButton: {
-    height: 50,
+    height: 45,
     width: 80,
     marginRight: 15,
     padding: 5,
@@ -922,12 +927,13 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
-    marginBottom: 40,
+    marginTop: 360,
+    marginHorizontal: 15,
   },
   alertText: {
-    color: colors.secondary,    
+    color: colors.secondary,
     fontSize: 14,
     flex: 1,
-  }
+  },
 });
 export default styles;

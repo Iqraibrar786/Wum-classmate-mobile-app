@@ -42,6 +42,7 @@ export const navigationRoutes = {
   ATTACHMENTS: '/attachments',
   ATTACHFILEBOTTOMSHEET: '/attachfile',
   REUSEPOST: '/reusepost',
+  POSTSCREEN: '/postscreen',
 };
 
 export const useNavigation = (router) => {
@@ -59,5 +60,6 @@ export const useNavigation = (router) => {
     goToResetPass: () => router.push(navigationRoutes.RESETPASS),
     goToAttachfileBottomSheet: () => router.push(navigationRoutes.ATTACHFILEBOTTOMSHEET),
     goToReusePost: () => router.push(navigationRoutes.REUSEPOST),
+    goToPostScreen: () => router.push(navigationRoutes.POSTSCREEN),
   };
 };

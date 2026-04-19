@@ -33,7 +33,7 @@ const CardInfo = ({ classData }) => {
           style: "destructive",
           onPress: () => router.push("/(drawer)/archive"),
         },
-      ]
+      ],
     );
   };
 

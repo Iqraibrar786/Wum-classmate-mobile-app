@@ -68,10 +68,10 @@ export default function ProfileScreen() {
           
         </View>
 
-          {/* Change password and logout */}
+          {/* Change password and logout
         <TouchableOpacity style={styles.changePasswordBtn}>
           <Text style={styles.changePasswordText}>Change Password 🔒</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity style={styles.logoutBtn}
          onPress={onSignup}>
