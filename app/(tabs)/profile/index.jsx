@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { View,Image, Text, TouchableOpacity} from "react-native";
-import MaterialIcons from 
-'@expo/vector-icons/MaterialIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import styles from "../../styles/global";
-import { useRouter } from "expo-router";
-import { navigationRoutes } from "../../constants/navigation";
+import styles from "../../../styles/global";
+import { useRouter, useNavigation } from "expo-router";
+import { navigationRoutes } from "../../../constants/navigation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { colors } from "../../../constants/colors";
 // Local file you uploaded (developer-provided path)
 const AVATAR_URI ="file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
 
 export default function ProfileScreen() {
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: 'Profile',
+      headerStyle: {
+        backgroundColor: colors.secondary,
+      },
+      headerTitleStyle: {
+        fontWeight: '600',
+        fontSize: 18,
+        color: colors.primary,
+      },
+      headerTintColor: colors.primary,
+    });
+  }, [navigation]);
+
   const router=useRouter();
 
     function editprofile(){

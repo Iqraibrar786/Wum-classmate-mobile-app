@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
   View,
   Text,
@@ -7,10 +7,30 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import styles from "../../styles/global";
+import { useNavigation } from "expo-router";
+import styles from "../../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import { colors } from "../../../constants/colors";
 
 const InviteScreen = () => {
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: 'People',
+      headerStyle: {
+        backgroundColor: colors.secondary,
+      },
+      headerTitleStyle: {
+        fontWeight: '600',
+        fontSize: 18,
+        color: colors.primary,
+      },
+      headerTintColor: colors.primary,
+    });
+  }, [navigation]);
+
   const [teacherText, setTeacherText] = useState("");
   const [studentText, setStudentText] = useState("");
 
@@ -73,7 +93,7 @@ const InviteScreen = () => {
         </View>
         
         {/* Image */}
-        <Image source={require("../../assets/images/class1img.jpg")} style={styles.image} />
+        <Image source={require("../../../assets/images/class1img.jpg")} style={styles.image} />
 
         {/* Invite Text */}
         <Text style={styles.subTitle}>Invite students to your class</Text>

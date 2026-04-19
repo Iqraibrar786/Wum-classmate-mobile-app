@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import styles from "../../styles/global";
+import styles from "../../../styles/global";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import { navigationRoutes } from "../../constants/navigation";
-const Img = require("../../assets/images/img5.jpg");
+import { useRouter, useNavigation } from "expo-router";
+import { navigationRoutes } from "../../../constants/navigation";
+import { colors } from "../../../constants/colors";
+const Img = require("../../../assets/images/img5.jpg");
 
 const AssigningScreen = () => {
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: 'Classwork',
+      headerStyle: {
+        backgroundColor: colors.secondary,
+      },
+      headerTitleStyle: {
+        fontWeight: '600',
+        fontSize: 18,
+        color: colors.primary,
+      },
+      headerTintColor: colors.primary,
+    });
+  }, [navigation]);
+
   const router = useRouter();
 
   function creatework() {
