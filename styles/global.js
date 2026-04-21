@@ -311,8 +311,8 @@ const styles = StyleSheet.create({
   addButton: {
     position: "absolute",
     right: 1,
-    top: 550,
-    marginBottom: -70,
+    top: 510,
+    // marginBottom: -70,
     backgroundColor: colors.secondary,
     borderRadius: 28,
     width: 56,
@@ -442,8 +442,8 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 140,
-    width: 350,
-    // marginTop: -20,
+    width: 355,
+    marginTop: -7,
     backgroundColor: colors.primaryLight,
     paddingVertical: 20,
     paddingHorizontal: 16,
@@ -451,7 +451,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     alignItems: "flex-start",
     justifyContent: "center",
-    borderBottomLeftRadius: 60,
+    // borderBottomLeftRadius: 60,
     borderBottomRightRadius: 60,
     position: "relative",
   },
@@ -636,7 +636,14 @@ const styles = StyleSheet.create({
 
   userprofileContainer: {
     alignItems: "center",
-    marginBottom: 30,
+    marginTop: -130,
+
+    //  flex: 1,
+    // backgroundColor: colors.secondary,
+    // // alignItems: "center",
+    // // alignSelf: "center",
+    // justifyContent: "center",
+    // padding: 10,
   },
   name: {
     fontSize: 20,
@@ -668,7 +675,7 @@ const styles = StyleSheet.create({
   //   fontWeight: "bold",
   // },
   logoutBtn: {
-    width: 300,
+    width: 200,
     alignSelf: "center",
     borderColor: "red",
     borderWidth: 2,

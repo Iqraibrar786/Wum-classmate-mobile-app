@@ -8,28 +8,11 @@ import {
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
-import styles from "../../../styles/global";
+import styles from "../../../../styles/global";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../../constants/colors";
 
 const InviteScreen = () => {
-  const navigation = useNavigation();
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: true,
-      headerTitle: 'People',
-      headerStyle: {
-        backgroundColor: colors.secondary,
-      },
-      headerTitleStyle: {
-        fontWeight: '600',
-        fontSize: 18,
-        color: colors.primary,
-      },
-      headerTintColor: colors.primary,
-    });
-  }, [navigation]);
 
   const [teacherText, setTeacherText] = useState("");
   const [studentText, setStudentText] = useState("");
@@ -45,9 +28,8 @@ const InviteScreen = () => {
   };
 
   return (
-    <SafeAreaProvider style={styles.Container}>
-      <View >
-
+    <SafeAreaProvider style={styles.primaryContainer}>
+      <View>
         {/* Teachers Section */}
         <View style={styles.userbtnContainer}>
           <TextInput
@@ -93,7 +75,7 @@ const InviteScreen = () => {
         </View>
         
         {/* Image */}
-        <Image source={require("../../../assets/images/class1img.jpg")} style={styles.image} />
+        <Image source={require("../../../../assets/images/class1img.jpg")} style={styles.image} />
 
         {/* Invite Text */}
         <Text style={styles.subTitle}>Invite students to your class</Text>

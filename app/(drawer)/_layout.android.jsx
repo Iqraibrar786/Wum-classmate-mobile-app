@@ -58,6 +58,8 @@ const Layout = () => {
         <Drawer.Screen name="askquestion" options={{ title: "" }} />
         <Drawer.Screen name="materialupload" options={{ title: "" }} />
         <Drawer.Screen name="joinclass" options={{ title: "" }}/>
+        <Drawer.Screen name="(tabs)" options={{ title: "" }}/>
+        <Drawer.Screen name="classinfo" options={{ title: "" }}/>
         <Drawer.Screen name="reusepost" options={{title: "ReusePost: select course"}}/>
       </Drawer>
     </GestureHandlerRootView>

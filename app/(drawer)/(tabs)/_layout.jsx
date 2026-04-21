@@ -3,7 +3,7 @@ import { Icon, Label, NativeTabs, VectorIcon } from 'expo-router/unstable-native
 import { Platform } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {colors} from "../../constants/colors";
+import {colors} from "../../../constants/colors";
 const TabsLayout = () => {
   return (
     <SafeAreaProvider>
@@ -56,15 +56,6 @@ const TabsLayout = () => {
           android: <Icon src={<VectorIcon family={MaterialCommunityIcons} name="face-man-profile" />} />,
         })}
       </NativeTabs.Trigger>
-
-       {/* Reuse Posts 
-      <NativeTabs.Trigger name="reusepost">
-        <Label>Reuse Posts</Label>
-        {Platform.select({
-          ios: <Icon sf="gear" />,
-          android: <Icon src={<VectorIcon family={MaterialCommunityIcons} name="face-man-profile" />} />,
-        })}
-      </NativeTabs.Trigger> */}
     </NativeTabs>
     </SafeAreaProvider>
   );

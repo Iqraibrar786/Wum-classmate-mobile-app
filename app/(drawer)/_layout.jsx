@@ -21,7 +21,7 @@ const Layout = () => {
               size={26}
               color="#000"
               style={{ marginLeft: 15 }}
-              onPress={() => navigation.toggleDrawer()} // TO OPRN OR CLOSE THE DRAWER
+              onPress={() => navigation.toggleDrawer()} // TO OPEN OR CLOSE THE DRAWER
             />
           ),
         })}

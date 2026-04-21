@@ -2,7 +2,7 @@ import { Icon, Label, NativeTabs, VectorIcon } from 'expo-router/unstable-native
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { colors } from "../../constants/colors";
+import { colors } from "../../../constants/colors";
 
 const Page = () => {
   return (

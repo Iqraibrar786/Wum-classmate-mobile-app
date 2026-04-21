@@ -1,58 +1,91 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-} from "react-native";
-import { SafeAreaProvider} from "react-native-safe-area-context";
-import styles from "../styles/global";
-import { useRouter } from "expo-router";
-import { navigationRoutes } from "../constants/navigation";
+import { View,Image,Text, TouchableOpacity} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import AntDesign from "@expo/vector-icons/AntDesign";
-
+import styles from "../styles/global";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Entypo from "react-native-vector-icons/Entypo";
+import { Ionicons } from "@expo/vector-icons";
+import Foundation from "@expo/vector-icons/Foundation";
+import { TextInput } from "react-native";
 const Img = require("../assets/images/img3.jpeg");
+import { useRouter, useNavigation } from "expo-router";
+import { navigationRoutes } from "../constants/navigation";
+import reusepost from "./(drawer)/reusepost";
+import { useLayoutEffect } from "react";
+import { colors } from "../constants/colors";
 
-export default function ClassInfo() {
-  const router = useRouter();
+const classInfo = () => {
+                         function postscreen(){
+                           router.push(navigationRoutes.POSTSCREEN);
+                         }
 
-  function assigning() {
-    router.push(navigationRoutes.ASSIGNING);
-  }
-
-  function announcement() {
-    router.push(navigationRoutes.ANNOUNCEMENT);
-  }
-
+                         function reusepost(){
+                           router.push(navigationRoutes.REUSEPOST);
+                         }
+    const router = useRouter();
   return (
-    <SafeAreaProvider style={styles.Container}>
-      {/* Header */}
-      <View style={styles.header}>
+    <SafeAreaProvider style={styles.primaryContainer}>
+      <View >
+        {/* Card */}
         <LinearGradient
-          colors={["#dea019", "rgb(147, 147, 215)"]}
-          style={styles.header}
+          colors={["#f7c13e", "#2A2575"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.card}
         >
-          <Text style={styles.classText}>Class Name</Text>
-          <Text style={styles.descriptionText}>Description</Text>
+          <View style={styles.cardContent}>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.cardTitle}>IT 6th Semester</Text>
+              <Text style={styles.descriptionTitle}>Section B</Text>
+              <Text style={styles.students}>54 students</Text>
+            </View>
+          </View>
         </LinearGradient>
-      </View>
 
-      {/* Announcement Box */}
-      <TouchableOpacity style={styles.announcementBox} onPress={announcement}>
-        <MaterialIcons name="announcement" size={28} color="black" />
-        <Text style={styles.announcementText}>
-          Announce something to your class
-        </Text>
-        <AntDesign
-          name="retweet"
-          size={24}
-          color="rgb(147, 147, 215)"
-          style={{ marginLeft: 18, alignSelf: "center" }}
-        />
-      </TouchableOpacity>
+        <View style={styles.responciveContainer}>
+          <TouchableOpacity style={styles.announcementBotton}
+          onPress={postscreen}>
+            <Text style={styles.announcementBottonText}>
+              <FontAwesome name="pencil" size={16} color="black" /> New
+              announcement
+            </Text>
+          </TouchableOpacity>
 
+          <TouchableOpacity style={styles.repostBotton} 
+          onPress={reusepost}>
+            <Text style={styles.repostBottonText}>
+              <Entypo name="retweet" size={17} color="black" /> Repost
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Card */}
+
+        <View style={styles.lecCard}>
+          <View style={styles.topSection}>
+
+             <TouchableOpacity style={{marginLeft:292,marginBottom: -20}}>
+            <Icon name="more-vert" size={18} color="#ccc" />
+          </TouchableOpacity>
+           
+          <TouchableOpacity style={{marginTop:10 ,borderRadius: 100,}}>
+            <Foundation name="book-bookmark" size={24} color="#f7c13e" /> 
+            </TouchableOpacity>
+
+            {/* Text Info */}
+            <Text style={styles.lecCardTitle}>New material: Lec-1: DEMO Class room</Text>
+            <Text style={styles.lecCardDiscription}> Room</Text>
+            <Text style={styles.date}> 4 May</Text>
+          </View>
+
+          <TextInput
+           placeholder="Add class comment"
+           placeholderTextColor="#ccc"
+           style={styles.commentInput}/>
+        </View>
+     
       {/* Image */}
       <View style={styles.secondImg}>
         <Image source={Img} style={styles.image} />
@@ -60,11 +93,8 @@ export default function ClassInfo() {
 
       <Text
         style={{
-          fontSize: 16,
-          marginLeft: -5,
+          marginTop: 20,
           alignSelf: "center",
-          marginTop: 60,
-          marginBottom: 30,
         }}
       >
         This is where you can talk to our class
@@ -74,6 +104,8 @@ export default function ClassInfo() {
         Use the stream to share announcements, post assignments and respond to
         questions
       </Text>
+       </View>
     </SafeAreaProvider>
   );
-}
+};
+export default classInfo;

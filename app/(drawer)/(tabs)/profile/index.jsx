@@ -3,35 +3,16 @@ import { View,Image, Text, TouchableOpacity} from "react-native";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import styles from "../../../styles/global";
+import styles from "../../../../styles/global";
 import { useRouter, useNavigation } from "expo-router";
-import { navigationRoutes } from "../../../constants/navigation";
+import { navigationRoutes } from "../../../../constants/navigation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { colors } from "../../../constants/colors";
+import { colors } from "../../../../constants/colors";
 // Local file you uploaded (developer-provided path)
 const AVATAR_URI ="file:///mnt/data/WhatsApp Image 2025-08-07 at 17.23.39_f3d97384.jpg";
 
 export default function ProfileScreen() {
-  const navigation = useNavigation();
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: true,
-      headerTitle: 'Profile',
-      headerStyle: {
-        backgroundColor: colors.secondary,
-      },
-      headerTitleStyle: {
-        fontWeight: '600',
-        fontSize: 18,
-        color: colors.primary,
-      },
-      headerTintColor: colors.primary,
-    });
-  }, [navigation]);
-
   const router=useRouter();
-
     function editprofile(){
       router.push(navigationRoutes.EDITPROFILE);
     }
@@ -46,7 +27,6 @@ export default function ProfileScreen() {
   return (
     <SafeAreaProvider style={styles.Container}>
       <View >
-
         {/* Profile Image and Name */}
         <View style={styles.userprofileContainer}>
           <Image source={{ uri: AVATAR_URI }} style={styles.avatar} />
@@ -81,15 +61,8 @@ export default function ProfileScreen() {
           <TouchableOpacity style={styles.profileList}>
             <Ionicons name="timer-outline" size={24} color="black" />
             <Text style={styles.profileIconText}>Clear history</Text>
-          </TouchableOpacity>
-
-          
+          </TouchableOpacity> 
         </View>
-
-          {/* Change password and logout
-        <TouchableOpacity style={styles.changePasswordBtn}>
-          <Text style={styles.changePasswordText}>Change Password 🔒</Text>
-        </TouchableOpacity> */}
 
         <TouchableOpacity style={styles.logoutBtn}
          onPress={onSignup}>
