@@ -10,15 +10,17 @@ const Layout = () => {
       <Drawer
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         screenOptions={{
+          swipeEnabled: true,
+          gestureEnabled: true,
           headerShown: true,
           drawerActiveBackgroundColor: "rgb(147, 147, 215)",
           drawerActiveTintColor: "#fff",
         }}
       >
         <Drawer.Screen
-          name="home"
+          name="classroom"
           options={{
-            title: "Home",
+            title: "Classroom",
             drawerIcon: ({ size, color }) => (
               <Ionicons name="home-outline" size={size} color={color} />
             ),
@@ -29,7 +31,11 @@ const Layout = () => {
           options={{
             title: "Notification",
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="notifications-outline" size={size} color={color} />
+              <Ionicons
+                name="notifications-outline"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
@@ -47,20 +53,121 @@ const Layout = () => {
             ),
           }}
         />
+        <Drawer.Screen
+          name="archive"
+          options={{
+            title: "Archive classes",
+            drawerIcon: ({ size, color }) => (
+              <Ionicons name="archive-outline" size={size} color={color} />
+            ),
+          }}
+        />
 
-        <Drawer.Screen name="settings" options={{ title: "Settings" }} />
-        <Drawer.Screen name="folder" options={{ title: "Folder" }} />
-        <Drawer.Screen name="help" options={{ title: "Help" }} />
-        <Drawer.Screen name="archive" options={{ title: "Archive" }} />
-        <Drawer.Screen name="createclass" options={{ title: "" }} />
-        <Drawer.Screen name="postscreen" options={{ title: "" }} />
-        <Drawer.Screen name="assignquiz" options={{ title: "" }} />
-        <Drawer.Screen name="askquestion" options={{ title: "" }} />
-        <Drawer.Screen name="materialupload" options={{ title: "" }} />
-        <Drawer.Screen name="joinclass" options={{ title: "" }}/>
-        <Drawer.Screen name="(tabs)" options={{ title: "" }}/>
-        <Drawer.Screen name="classinfo" options={{ title: "" }}/>
-        <Drawer.Screen name="reusepost" options={{title: "ReusePost: select course"}}/>
+        <Drawer.Screen
+          name="folder"
+          options={{
+            title: "Classroom folders",
+            drawerIcon: ({ size, color }) => (
+              <Ionicons name="folder-outline" size={size} color={color} />
+            ),
+          }}
+        />
+
+        <Drawer.Screen
+          name="settings"
+          options={{
+            title: "Settings",
+            drawerIcon: ({ size, color }) => (
+              <Ionicons name="settings-outline" size={size} color={color} />
+            ),
+          }}
+        />
+
+        <Drawer.Screen
+          name="help"
+          options={{
+            title: "Help",
+            drawerIcon: ({ size, color }) => (
+              <Ionicons name="help-circle-outline" size={size} color={color} />
+            ),
+          }}
+        />
+
+        <Drawer.Screen
+          name="createclass"
+          options={{
+            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+          }}
+        />
+        <Drawer.Screen
+          name="index"
+          options={{
+            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+          }}
+        />
+
+        <Drawer.Screen
+          name="home"
+          options={{
+            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+          }}
+        />
+
+        <Drawer.Screen
+          name="(tabs)"
+          options={{
+            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+          }}
+        />
+
+        <Drawer.Screen
+          name="postscreen"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="assignquiz"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="askquestion"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="materialupload"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="joinclass"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="classinfo"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
+
+        <Drawer.Screen
+          name="reusepost"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );

@@ -27,8 +27,6 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
 
       {/* Drawer Screens */}
       <DrawerItemList {...props} />
-
-    
     </DrawerContentScrollView>
   );
 }
