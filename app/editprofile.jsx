@@ -12,6 +12,7 @@ const EdirProfileScreen=()=> {
       router.push(navigationRoutes.PROFILE);
     }
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <SafeAreaProvider style={styles.Container}>
       <View>
@@ -36,6 +37,21 @@ const EdirProfileScreen=()=> {
         <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
           <Ionicons
             name={showPassword ? 'eye' : 'eye-off'}
+            size={22}
+            color="#888"
+          />
+        </TouchableOpacity>
+      </View>
+
+       <Text style={styles.profileLabel}>Confirm Password</Text>
+      <View style={styles.passwordContainer}>
+        <TextInput
+          style={styles.passwordInput}
+          secureTextEntry={!showPassword}
+        />
+        <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+          <Ionicons
+            name={showConfirmPassword ? 'eye' : 'eye-off'}
             size={22}
             color="#888"
           />

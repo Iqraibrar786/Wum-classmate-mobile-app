@@ -90,7 +90,8 @@ const Layout = () => {
         <Drawer.Screen
           name="home"
           options={{
-            drawerItemStyle: { display: "none" }, // 
+            drawerItemStyle: { display: "none" }, 
+            headerTitle: "",
           }}
         />
 
@@ -98,6 +99,7 @@ const Layout = () => {
           name="(tabs)"
           options={{
             drawerItemStyle: { display: "none" }, 
+             headerTitle: "",
           }}
         />
 

@@ -311,8 +311,7 @@ const styles = StyleSheet.create({
   addButton: {
     position: "absolute",
     right: 1,
-    top: 510,
-    // marginBottom: -70,
+    top: 520,
     backgroundColor: colors.secondary,
     borderRadius: 28,
     width: 56,
@@ -709,11 +708,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   profileLabel: {
-    marginLeft: 10,
+    marginLeft: 6,
     fontWeight: "bold",
-    marginBottom: 5,
+    marginBottom: 3,
     marginTop: 15,
-    fontSize: 16,
+    fontSize: 14,
   },
   profileInput: {
     width: 320,
