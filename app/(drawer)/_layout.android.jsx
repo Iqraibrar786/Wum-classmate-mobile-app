@@ -73,25 +73,6 @@ const Layout = () => {
           }}
         />
 
-        <Drawer.Screen
-          name="settings"
-          options={{
-            title: "Settings",
-            drawerIcon: ({ size, color }) => (
-              <Ionicons name="settings-outline" size={size} color={color} />
-            ),
-          }}
-        />
-
-        <Drawer.Screen
-          name="help"
-          options={{
-            title: "Help",
-            drawerIcon: ({ size, color }) => (
-              <Ionicons name="help-circle-outline" size={size} color={color} />
-            ),
-          }}
-        />
 
         <Drawer.Screen
           name="createclass"
@@ -102,21 +83,21 @@ const Layout = () => {
         <Drawer.Screen
           name="index"
           options={{
-            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+            drawerItemStyle: { display: "none" }, // 
           }}
         />
 
         <Drawer.Screen
           name="home"
           options={{
-            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+            drawerItemStyle: { display: "none" }, // 
           }}
         />
 
         <Drawer.Screen
           name="(tabs)"
           options={{
-            drawerItemStyle: { display: "none" }, // 👈 hides from drawer
+            drawerItemStyle: { display: "none" }, 
           }}
         />
 

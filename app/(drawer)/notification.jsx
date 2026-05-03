@@ -6,7 +6,7 @@ const Img = require("../../assets/images/img3.jpeg");
 
 const notification = () => {
   return (
-        <SafeAreaProvider style={styles.container}>
+        <SafeAreaProvider style={styles.primaryContainer}>
        <View style={styles.image}>
         <Image source={Img} style={styles.image} />
         </View>
