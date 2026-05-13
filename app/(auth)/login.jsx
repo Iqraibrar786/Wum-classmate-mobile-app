@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { loginUser } from "../services/api";
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { Image } from "react-native";
 import styles from "../../styles/global";
@@ -34,31 +35,33 @@ const Login = () => {
   });
 
   const validateForm = () => {
-    const newErrors = {};
+    // const newErrors = {};
 
-    if (validation.isEmpty(email)) {
-      newErrors.email = getErrorMessage('email', 'empty');
-    } else if (!validation.isValidEmail(email)) {
-      newErrors.email = getErrorMessage('email', 'invalid');
-    }
+    // if (validation.isEmpty(email)) {
+    //   newErrors.email = getErrorMessage('email', 'empty');
+    // } else if (!validation.isValidEmail(email)) {
+    //   newErrors.email = getErrorMessage('email', 'invalid');
+    // }
 
-    if (validation.isEmpty(password)) {
-      newErrors.password = getErrorMessage('password', 'empty');
-    } else if (!validation.isValidPassword(password)) {
-      newErrors.password = getErrorMessage('password', 'invalid');
-    }
+    // if (validation.isEmpty(password)) {
+    //   newErrors.password = getErrorMessage('password', 'empty');
+    // } else if (!validation.isValidPassword(password)) {
+    //   newErrors.password = getErrorMessage('password', 'invalid');
+    // }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  //   setErrors(newErrors);
+  //   return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = () => {
-    if (!validateForm()) {
-      return;
-    }
+  const handleLogin = async () => {
 
-    console.log("Login attempt with:", { email, password, rememberMe });
-    router.push(navigationRoutes.OTP);
+    try {
+      const response = await loginUser({ email, password, rememberMe });
+      console.log("Login response:", response);
+      router.push(navigationRoutes.OTP);
+    } catch (error) {
+      console.error("Login error:", error);
+    }
   };
 
   const toggleShowPassword = () => {

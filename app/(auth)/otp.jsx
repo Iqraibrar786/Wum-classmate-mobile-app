@@ -5,11 +5,12 @@ import styles from "../../styles/global";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 import { navigationRoutes } from "../../constants/navigation";
+import resetpass from './resetpass';
 
 const Otp = () => {
           const router=useRouter();
                  function verified(){
-                   router.push(navigationRoutes.VERIFIED);
+                   router.push(navigationRoutes.RESETPASS);
                  }
   const numberOfInputs = 4;                                        //<----Define how many OTP digits the user must inputs
   const [otp, setOtp] = useState(Array(numberOfInputs).fill('')); //<----Initialize array of 4 empty strings each OTP digit is separately
@@ -39,13 +40,13 @@ const Otp = () => {
   };
 
   return (
-    <SafeAreaProvider style={styles.Container}>
+    <SafeAreaProvider style={styles.primaryContainer}>
       <StatusBar barStyle="dark-content" />
       <Text style={styles.sideTitle}>OTP Verification!</Text>
 
       {/* Phone Number Section */}
       <Text style={styles.sideDescription}>
-        Enter 4-digit code we have sent at  <Text style={styles.phoneNumber}>+91-123 456 7890</Text>
+        Enter 4-digit code we have sent at  <Text style={styles.phoneNumber}>linkinfo777@gmail.com</Text>
       </Text>
 
       <View style={styles.otpContainer}>
@@ -75,6 +76,10 @@ const Otp = () => {
 
       <Text style={styles.sideDescription}>This session will end in 60 seconds.</Text>
 
+      <TouchableOpacity style={styles.primaryButton}
+      onPress={verified}>
+        <Text style={styles.buttonText}>Continue</Text>
+      </TouchableOpacity>
 
       <View style={styles.resendContainer}>
         <Text style={styles.signUpText}>Didn't get code?{' '}</Text>
@@ -82,11 +87,6 @@ const Otp = () => {
           <Text style={styles.link}>Resend Code</Text>
         </TouchableOpacity>
         </View>
-
-      <TouchableOpacity style={styles.primaryButton}
-      onPress={verified}>
-        <Text style={styles.buttonText}>Continue</Text>
-      </TouchableOpacity>
     </SafeAreaProvider>
   );
 };

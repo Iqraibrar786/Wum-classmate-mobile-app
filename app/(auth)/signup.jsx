@@ -1,4 +1,5 @@
 import React from "react";
+import { signupUser } from "../services/api";
 import {View, Text, TouchableOpacity, TextInput,Image} from "react-native";
 import styles from "../../styles/global";
 import { useFonts } from "expo-font";

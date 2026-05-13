@@ -510,7 +510,7 @@ const styles = StyleSheet.create({
     marginRight: 28,
   },
   userbtnContainer: {
-    width: 330,
+    width: 310,
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "center",

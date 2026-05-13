@@ -5,6 +5,7 @@ import { navigationRoutes } from "../../constants/navigation";
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { validation, getErrorMessage } from "../../utils/validation";
+// import Otp from './otp';
 // import resetpass from './resetpasss';
 
 
@@ -34,12 +35,12 @@ const forgotpass =()=>{
     }
 
     // If email is valid -> navigate
-    router.push(navigationRoutes.RESETPASS);
+    router.push(navigationRoutes.OTP);
   };
 
     return (
         <View style={styles.Container}>
-        <Text style={styles.sideTitle}>Forgot Password</Text>
+        <Text style={styles.sideTitle}>Forgot Password?</Text>
         <Text style={styles.sideDescription}>Please enter the email associate with your account.</Text>
 
         <View style={styles.userbtnContainer}>

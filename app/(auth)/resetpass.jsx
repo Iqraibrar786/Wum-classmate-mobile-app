@@ -21,7 +21,7 @@ const resetpass =()=>{
 
 
     return (
-        <SafeAreaProvider style={styles.Container}>
+        <SafeAreaProvider style={styles.primaryContainer}>
 
         <Text style={styles.sideTitle}>Reset Password</Text>
         <Text style={styles.sideDescription}>Please enter your new password.</Text>

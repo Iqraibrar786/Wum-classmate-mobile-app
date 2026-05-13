@@ -17,7 +17,6 @@ const EdirProfileScreen=()=> {
     <SafeAreaProvider style={styles.Container}>
       <View>
 
-
       <Text style={styles.profileLabel}>Name</Text>
       <TextInput style={styles.profileInput} />
 
@@ -26,7 +25,6 @@ const EdirProfileScreen=()=> {
 
       <Text style={styles.profileLabel}>Description</Text>
       <TextInput style={styles.profileInput} />
-
      
       <Text style={styles.profileLabel}>Password</Text>
       <View style={styles.passwordContainer}>
@@ -47,7 +45,7 @@ const EdirProfileScreen=()=> {
       <View style={styles.passwordContainer}>
         <TextInput
           style={styles.passwordInput}
-          secureTextEntry={!showPassword}
+          secureTextEntry={!showConfirmPassword}
         />
         <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
           <Ionicons
